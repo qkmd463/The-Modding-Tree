@@ -60,12 +60,12 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 	    },
-            },
         21: {
             title: "21",
             description: "15x restart gain.",
             cost: new Decimal(175000),
         },
+	    }
 
 })
 
