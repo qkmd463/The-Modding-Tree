@@ -75,7 +75,7 @@ addLayer("r", {
                 return gdhhwwciwcdccedjcbedhjeb
             }
         }
-    },
+    }
 })
 
     
