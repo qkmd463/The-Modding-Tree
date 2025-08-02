@@ -32,7 +32,7 @@ upgrades: {
     description: "10x point gain.",
     cost: new Decimal(1)
 		if (hasUpgrade('p', 11)) gain = gain.times(10)
-        },
+        }
 
 	
 
