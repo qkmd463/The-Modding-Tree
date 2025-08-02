@@ -27,11 +27,14 @@ addLayer("r", {
     layerShown(){return true}
 	    upgrades: {
 	        11: {
-
+			     title: "11",
+    description: "10x point gain.",
+    cost: new Decimal(1),
         },
-		           
-    }
-})
+}
+	    }	
+	    }
+		    })
 
 			
 
