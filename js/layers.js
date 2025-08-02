@@ -16,6 +16,7 @@ addLayer("r", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 	if (hasUpgrade('r', 13)) mult = mult.times(upgradeEffect('r', 13))
+	if (hasUpgrade('r', 15)) gain = gain.times(15)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -60,8 +61,8 @@ addLayer("r", {
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 	    },
             },
-	15: {
-            title: "15",
+	21: {
+            title: "21",
             description: "15x restart gain.",
             cost: new Decimal(175000),
         },
