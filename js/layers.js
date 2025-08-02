@@ -6,7 +6,7 @@ addLayer("r", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#d1483f",
+    color: "#d93636",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "restart", // Name of prestige currency
     baseResource: "points", // Name of resource prestige is based on
@@ -20,7 +20,7 @@ addLayer("r", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 1, // Row the layer is in on the tree (0 is the first row)
+    row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "r", description: "r: Reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
