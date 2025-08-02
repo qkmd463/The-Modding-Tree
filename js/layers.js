@@ -63,7 +63,7 @@ addLayer("r", {
         21: {
             title: "21",
             description: "15x restart gain.",
-            cost: new Decimal(175000),
+            cost: new Decimal(270000),
         },
 	    }
 
