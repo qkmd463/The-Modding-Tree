@@ -89,7 +89,7 @@ addLayer("p", {
 	    	restart: new Decimal(0)
     }},
     color: "#386dc2",
-    requires: new Decimal(1e15), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e14), // Can be a function that takes requirement increases into account
     resource: "prestige", // Name of prestige currency
     baseResource: "restart", // Name of resource prestige is based on
     baseAmount() {return player.restart}, // Get the current amount of baseResource
@@ -102,9 +102,9 @@ addLayer("p", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 0, // Row the layer is in on the tree (0 is the first row)
+    row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "r", description: "r: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "p", description: "p: reset for prestige", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
 
