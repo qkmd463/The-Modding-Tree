@@ -25,6 +25,15 @@ addLayer("r", {
         {key: "r", description: "r: Reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true}
+	upgrades: {
+	11: {
+		  title: "11",
+    description: "10x point gain.",
+    cost: new Decimal(1)
+		if (hasUpgrade('r', 11)) gain = gain.times(10)
+        }
+    },
+	 
 })
 
 	
