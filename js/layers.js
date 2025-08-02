@@ -44,7 +44,7 @@ addLayer("r", {
 	13: {
             title: "13",
             description: "restart boost restart.",
-            cost: new Decimal(100),
+            cost: new Decimal(150),
             effect() {
                 return player[this.layer].points.add(1).pow(0.25)
             },
