@@ -22,18 +22,22 @@ addLayer("r", {
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "r", description: "r: Reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true}
-	upgrades: {
-		11: {
-		title: "11",
-		description: "10x point gain.",
-		cost: new Decimal(1),
-		if (hasUpgrade('r', 11)) gain = gain.times(10)
-			  }}}
-	}
-		})
+	    upgrades: {
+		            11: {
+			    title: "11",
+			    description: "10x point gain.",
+			    cost: new Decimal(1),
+			if (hasUpgrade('p', 11)) gain = gain.times(10)
+        }}}
+
+    }
+})
+
+			
+
 			
 
 
