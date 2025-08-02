@@ -25,14 +25,17 @@ addLayer("r", {
         {key: "r", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-	    upgrades: {
+	if (hasUpgrade('r', 11)) gain = gain.times(10)
+    upgrades: {
         11: {
             title: "11",
-            description: "10x point gain.",
+            description: "Multiplies your point gain by 2.",
             cost: new Decimal(1),
-		if (hasUpgrade('r', 11)) gain = gain.times(10),
-		    12: {
-	12: {
+	},
+
+        },
+	}
+	            12: {
             title: "12",
             description: "restart boost point.",
             cost: new Decimal(4),
@@ -40,12 +43,10 @@ addLayer("r", {
                 return player[this.layer].points.add(1).pow(3)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-        
-        }
-        },
-
+    }
     }
 })
+
     
 
 
