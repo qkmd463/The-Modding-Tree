@@ -64,7 +64,15 @@ addLayer("r", {
             title: "21",
             description: "15x restart gain.",
             cost: new Decimal(270000),
-        },
+        	},
+	22: {
+            title: "22",
+            description: "points boost restart.",
+            cost: new Decimal(900000000),
+		            effect() {
+                return player.log10(points.add(10))
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
 	    }
 
 })
