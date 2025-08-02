@@ -34,7 +34,7 @@ addLayer("r", {
         },
         12: {
             title: "12",
-            description: "restart boost point.",
+            description: "restart boost points.",
             cost: new Decimal(4),
             effect() {
                 return player[this.layer].points.add(1).pow(3)
@@ -44,11 +44,17 @@ addLayer("r", {
 	13: {
             title: "13",
             description: "restart boost restart.",
-            cost: new Decimal(150),
+            cost: new Decimal(125),
             effect() {
                 return player[this.layer].points.add(1).pow(0.25)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+	14: {
+            title: "12",
+            description: "restart boost points.",
+            cost: new Decimal(5000),
+            effect() {
+                return player.points.add(1).pow(0.75)
         }
 	    }
 })
