@@ -26,5 +26,24 @@ addLayer("r", {
     ],
     layerShown(){return true}
 })
- 
+ upgrades: {
+	                                  11: {
+		     title: "11",
+    description: "10x point gain.",
+    cost: new Decimal(1),
+    if (hasUpgrade('p', 11)) gain = gain.times(10)
+					  },
+			                  12: {
+		     title: "12",
+    description: "restart boost points.",
+    cost: new Decimal(1),
+    effect() {
+        return player[this.layer].points.add(1).pow(3)
+    },
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
+
+        },
+
+    },
+
    
