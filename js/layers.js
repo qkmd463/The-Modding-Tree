@@ -30,10 +30,9 @@ addLayer("r", {
     title: "11",
     description: "10x point gain.",
     cost: new Decimal(1),
-	if (hasUpgrade('r', 11)) gain = gain.times(10)
-		}
-        },
-	 12: {
+	if (hasUpgrade('r', 11)) gain = gain.times(10)	
+	    ,
+	12: {
     title: "12",
     description: "restart boost point.",
     cost: new Decimal(4),
@@ -42,6 +41,10 @@ addLayer("r", {
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		}
+        }
+
+	    }
+
     })
     
 
