@@ -55,7 +55,7 @@ addLayer("r", {
             description: "points boost points.",
             cost: new Decimal(5000),
 		            effect() {
-                return player[this.layer].points.add(1).pow(0.3)
+                return player.points.add(1).pow(0.3)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 	    },
