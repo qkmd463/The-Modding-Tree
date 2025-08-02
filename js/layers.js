@@ -33,6 +33,7 @@ addLayer("r", {
 		if (hasUpgrade('r', 11)) gain = gain.times(10)
 			  }}}
 	}
+		})
 			
 
 
