@@ -91,7 +91,7 @@ addLayer("p", {
     requires: new Decimal(1e14), // Can be a function that takes requirement increases into account
     resource: "prestige", // Name of prestige currency
     baseResource: "restart", // Name of resource prestige is based on
-    baseAmount() {return player.points}, // Get the current amount of baseResource
+    baseAmount() {return player.restart}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.16, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
@@ -106,6 +106,7 @@ addLayer("p", {
         {key: "p", description: "p: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+})
 
 
 
