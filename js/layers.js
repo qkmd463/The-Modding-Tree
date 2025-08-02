@@ -58,6 +58,7 @@ addLayer("r", {
                 return player.points.add(1).pow(0.75)
         }
 	    }
+	    }
 })
 
     
