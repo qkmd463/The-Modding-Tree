@@ -75,9 +75,15 @@ addLayer("r", {
                 return player.points.plus(10).log10()
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
-	    }
+	    },
+	23: {
+            title: "11",
+            description: "100% restart/s.",
+            cost: new Decimal(1e32),
+        },
 	    }
 
+		    
 }),
 	addLayer("p", {
     name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id.
