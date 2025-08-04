@@ -21,6 +21,7 @@ addLayer("r", {
 	if (hasUpgrade('p', 12)) mult = mult.times(25)
 	if (hasUpgrade('p', 21)) mult = mult.times(upgradeEffect('p', 21))
 	if (hasUpgrade('c', 11)) mult = mult.times(50)
+	if (hasUpgrade('c', 13)) mult = mult.times(upgradeEffect('c', 13))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -239,6 +240,15 @@ addLayer("r", {
             cost: new Decimal(2),
             effect() {
                 return player[this.layer].points.add(3).pow(45)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+	},
+        13: {
+            title: "13",
+            description: "coins boost restart.",
+            cost: new Decimal(3),
+            effect() {
+                return player[this.layer].points.add(1).pow(2.5)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 	},
