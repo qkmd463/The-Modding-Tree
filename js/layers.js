@@ -233,6 +233,11 @@ addLayer("r", {
             description: "50x points, restart, prestige.",
             cost: new Decimal(1),
         },
+        11: {
+            title: "12",
+            description: "points ^1.1.",
+            cost: new Decimal(2),
+	},
 	}
 
 		
