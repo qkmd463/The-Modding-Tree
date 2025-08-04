@@ -203,7 +203,7 @@ addLayer("r", {
 	    	prestige: new Decimal(0),
 		restart: new Decimal(0),
     }},
-    color: "#d93636",
+    color: "#d9c216",
     requires: new Decimal(1e80), // Can be a function that takes requirement increases into account
     resource: "coins", // Name of prestige currency
     baseResource: "prestige", // Name of resource prestige is based on
