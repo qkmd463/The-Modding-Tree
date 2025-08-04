@@ -191,6 +191,19 @@ addLayer("r", {
             cost: new Decimal(1e11),
         },
 		}
+buyables: {
+    11: {
+        cost() { return new Decimal(2).mul(10) },
+        display() { return "Blah" },
+        canAfford() { return player[this.layer].points.gte(this.cost(1e75)) },
+        buy() {
+            player[this.layer].points = player[this.layer].points.sub(this.cost())
+            setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+        },
+        etc
+    },
+    etc
+}
 })
 
 
