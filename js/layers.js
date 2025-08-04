@@ -27,7 +27,7 @@ addLayer("r", {
     },
     doReset(resettingLayer) {
         let keep = [];
-        if (hasMilestone("r", 24) && resettingLayer=="r") keep.push("upgrades")
+        if (hasUpgrade("r", 24) && resettingLayer=="r") keep.push("upgrades")
     },
     passiveGeneration() { 
         if (hasUpgrade("r", 23)) return (hasUpgrade("r", 23)?1:0)
