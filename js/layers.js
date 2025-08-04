@@ -83,8 +83,66 @@ if(hasUpgrade('r', '23'))keepupgs.push(11, 12, 13, 14, 21, 22, 23)
             description: "keep upgrades.",
             cost: new Decimal(1e32),
 	    }
+	    }
 
 }),
+		addLayer("p", {
+    name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "p", // This appears on the layer's node. Default is the id with the first letter capitalized
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+	    	restart: new Decimal(0),
+    }},
+    color: "#208ec9",
+    requires: new Decimal("1e14"), // Can be a function that takes requirement increases into account
+    resource: "prestige", // Name of prestige currency
+    baseResource: "restart", // Name of resource prestige is based on
+    baseAmount() {return player.r.points}, // Get the current amount of baseResource
+    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.16, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+	if (hasUpgrade('p', 13)) mult = mult.times(2)    
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 1, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "p: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    layerShown(){return true},
+		upgrades: {
+        11: {
+            title: "11",
+            description: "10000x point gain.",
+            cost: new Decimal(1),
+        },
+        12: {
+            title: "12",
+            description: "25x restart gain.",
+            cost: new Decimal(1),
+        },
+        13: {
+            title: "13",
+            description: "2x prestige gain.",
+            cost: new Decimal(1),
+        },
+        14: {
+            title: "14",
+            description: "prestige boost points.",
+            cost: new Decimal(50),
+            effect() {
+                return player[this.layer].points.add(1).pow(8)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            },
+		}
+})
+
 
 
 
