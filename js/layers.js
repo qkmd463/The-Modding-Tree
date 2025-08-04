@@ -82,7 +82,7 @@ addLayer("r", {
 	    },
 	23: {
             title: "23",
-            description: "100% restart/s.",
+            description: "+100% restart/s.",
             cost: new Decimal(1e32),
         },
 	    }
@@ -148,13 +148,12 @@ addLayer("r", {
             description: "prestige boost restart.",
             cost: new Decimal(130000),
             effect() {
-                return player[this.layer].points.add(1).pow(0.8)
+                return player[this.layer].points.add(1).pow(0.15)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
 		}
 })
-
 
 
 
