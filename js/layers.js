@@ -27,7 +27,7 @@ doReset(layer){
   if(layers[layer].row <= layers[this.layer].row || layers[layer].row == "side")return;
   layerDataReset(this.layer)
  let keep = []
-  if(hasUpgrade(<r>,<32>))keep.push("upgrades")
+  if(hasUpgrade(<r>,<23>))keep.push("upgrades")
   layerDataReset(this.layer, keep)
 },
     row: 0, // Row the layer is in on the tree (0 is the first row)
