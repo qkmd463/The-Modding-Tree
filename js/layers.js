@@ -142,7 +142,7 @@ addLayer("r", {
         if (hasUpgrade("p", 23)) return (hasUpgrade("p", 23)?1:0)
         },    
     hotkeys: [
-        {key: "p", description: "p: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "p", description: "p: reset for prestige", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
 		upgrades: {
@@ -248,7 +248,7 @@ addLayer("r", {
             description: "coins boost restart.",
             cost: new Decimal(3),
             effect() {
-                return player[this.layer].points.add(1).pow(2.5)
+                return player[this.layer].points.add(2).pow(2.5)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 	},
