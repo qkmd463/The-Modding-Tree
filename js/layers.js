@@ -77,7 +77,7 @@ addLayer("r", {
 	    }
 	    }
 
-})
+}),
 
 addLayer("p", {
     name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id.
