@@ -94,6 +94,15 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
 	    },
+	31: {
+            title: "31",
+            description: "restart boost prestige.",
+            cost: new Decimal(1e250),
+		            effect() {
+                return player.r.points.plus(10).pow(0.08).log10()
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
+	    },
 	    }
 
 		    
@@ -119,6 +128,7 @@ addLayer("r", {
 	if (hasUpgrade('p', 13)) mult = mult.times(2)
 	if (hasUpgrade('p', 22)) mult = mult.times(upgradeEffect('p', 22))
 	if (hasUpgrade('r', 24)) mult = mult.times(upgradeEffect('r', 24))
+	if (hasUpgrade('r', 31)) mult = mult.times(upgradeEffect('r', 31))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
