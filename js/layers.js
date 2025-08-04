@@ -99,7 +99,7 @@ addLayer("r", {
             description: "restart boost prestige.",
             cost: new Decimal(1e250),
 		            effect() {
-                return player.r.points.plus(10).pow(0.08).log10()
+                return player.r.points.plus(10).pow(1.4).log10()
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
 	    },
