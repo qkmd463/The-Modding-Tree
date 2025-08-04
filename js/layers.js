@@ -23,6 +23,7 @@ addLayer("r", {
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
+    },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "r", description: "r: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -74,13 +75,8 @@ addLayer("r", {
                 return player.points.plus(10).log10()
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
-	    },
-	23: {
-            title: "23",
-            description: "+100% restart/s.",
-            cost: new Decimal(1e32),
-        	},
-	    },
+	    }
+	    }
 
 }),
 	addLayer("p", {
