@@ -25,11 +25,6 @@ addLayer("r", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-doReset(){
-  let keepupgs = []
-if (hasUpgrade("r", 24)) keepupgs.push("upgrades")
-layerDataReset(layer, keep)
-},
     passiveGeneration() { 
         if (hasUpgrade("r", 23)) return (hasUpgrade("r", 23)?1:0)
         },    
@@ -92,9 +87,12 @@ layerDataReset(layer, keep)
         },
 	24: {
             title: "24",
-            description: "keep restart upgrades on prestige.",
-            cost: new Decimal(1e50),
+            description: "points boost prestige.",
+            cost: new Decimal(1e160),
+		            effect() {
+                return player.points.plus(10).pow(0.3).log10()
         },
+	    }
 	    }
 
 		    
