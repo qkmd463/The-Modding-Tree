@@ -17,7 +17,8 @@ addLayer("r", {
         mult = new Decimal(1)
 	if (hasUpgrade('r', 13)) mult = mult.times(upgradeEffect('r', 13))
 	if (hasUpgrade('r', 21)) mult = mult.times(15)
-	if (hasUpgrade('r', 22)) mult = mult.times(upgradeEffect('r', 22))    
+	if (hasUpgrade('r', 22)) mult = mult.times(upgradeEffect('r', 22))
+	if (hasUpgrade('p', 12)) mult = mult.times(25)    
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -85,14 +86,15 @@ addLayer("r", {
     startData() { return {
         unlocked: true,
 		points: new Decimal(0),
+	    	restart: new Decimal(0),
     }},
     color: "#208ec9",
-    requires: new Decimal("1e140"), // Can be a function that takes requirement increases into account
+    requires: new Decimal("1e14"), // Can be a function that takes requirement increases into account
     resource: "prestige", // Name of prestige currency
     baseResource: "restart", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.04, // Prestige currency exponent
+    exponent: 0.16, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -105,6 +107,22 @@ addLayer("r", {
         {key: "p", description: "p: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+		upgrades: {
+        11: {
+            title: "11",
+            description: "10000x point gain.",
+            cost: new Decimal(1),
+        },
+        12: {
+            title: "12",
+            description: "25x restart gain.",
+            cost: new Decimal(1),
+        },
+        13: {
+            title: "12",
+            description: "2x prestige gain.",
+            cost: new Decimal(1),
+        },						
 })
 
 
