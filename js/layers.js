@@ -25,11 +25,6 @@ addLayer("r", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-doReset(){
-  let keep = []
-if (hasUpgrade("r", 24) && resettingLayer=="r") keep.push("upgrades")
-if (layers[resettingLayer].row > this.row) layerDataReset("r", keep)
-},
     passiveGeneration() { 
         if (hasUpgrade("r", 23)) return (hasUpgrade("r", 23)?1:0)
         },    
@@ -124,6 +119,11 @@ if (layers[resettingLayer].row > this.row) layerDataReset("r", keep)
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
+doReset(resettingLayer){
+  let keep = []
+if (hasUpgrade("r", 24) && resettingLayer=="r") keep.push("upgrades")
+if (layers[resettingLayer].row > this.row) layerDataReset("r", keep)
+},
     row: 1, // Row the layer is in on the tree (0 is the first row)
     passiveGeneration() { 
         if (hasUpgrade("p", 32)) return (hasUpgrade("p", 32)?1:0)
