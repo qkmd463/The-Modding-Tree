@@ -115,6 +115,9 @@ addLayer("r", {
         return new Decimal(1)
     },
     row: 1, // Row the layer is in on the tree (0 is the first row)
+    passiveGeneration() { 
+        if (hasUpgrade("p", 23)) return (hasUpgrade("p", 23)?1:0)
+        },    
     hotkeys: [
         {key: "p", description: "p: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -162,6 +165,11 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
+	23: {
+            title: "23",
+            description: "+100% prestige/s.",
+            cost: new Decimal(1e11),
+        },
 		}
 })
 
