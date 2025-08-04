@@ -23,6 +23,8 @@ addLayer("r", {
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
+    doReset() {
+if(hasUpgrade('r', '23'))keepupgs.push(11, 12, 13, 14, 21, 22, 23)
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
@@ -75,7 +77,11 @@ addLayer("r", {
                 return player.points.plus(10).log10()
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
-	    }
+	    },
+	23: {
+            title: "23",
+            description: "keep upgrades.",
+            cost: new Decimal(1e32),
 	    }
 
 }),
