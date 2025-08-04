@@ -28,7 +28,7 @@ addLayer("r", {
 doReset(){
   let keep = []
 if (hasUpgrade("r", 24) && resettingLayer=="r") keep.push("upgrades")
-  layerDataReset(this.layer, keep)
+if (layers[resettingLayer].row > this.row) layerDataReset("r", keep)
 },
     passiveGeneration() { 
         if (hasUpgrade("r", 23)) return (hasUpgrade("r", 23)?1:0)
