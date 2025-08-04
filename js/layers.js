@@ -23,9 +23,11 @@ addLayer("r", {
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
-    doReset() {
-if(hasUpgrade('r', '23'))keepupgs.push(11, 12, 13, 14, 21, 22, 23)
-    },
+doReset(layer){
+ let keep = []
+  if(hasUpgrade(<r>,<32>))keep.push("upgrades")
+  layerDataReset(this.layer, keep)
+},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "r", description: "r: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
