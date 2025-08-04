@@ -146,7 +146,7 @@ addLayer("r", {
 	21: {
             title: "21",
             description: "prestige boost restart.",
-            cost: new Decimal(30000),
+            cost: new Decimal(130000),
             effect() {
                 return player[this.layer].points.add(1).pow(0.8)
             },
