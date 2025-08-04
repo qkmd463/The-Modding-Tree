@@ -18,7 +18,8 @@ addLayer("r", {
 	if (hasUpgrade('r', 13)) mult = mult.times(upgradeEffect('r', 13))
 	if (hasUpgrade('r', 21)) mult = mult.times(15)
 	if (hasUpgrade('r', 22)) mult = mult.times(upgradeEffect('r', 22))
-	if (hasUpgrade('p', 12)) mult = mult.times(25)    
+	if (hasUpgrade('p', 12)) mult = mult.times(25)
+	if (hasUpgrade('p', 21)) mult = mult.times(upgradeEffect('p', 21))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -139,6 +140,15 @@ addLayer("r", {
             cost: new Decimal(50),
             effect() {
                 return player[this.layer].points.add(1).pow(8)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect		
+            },
+	21: {
+            title: "21",
+            description: "prestige boost restart.",
+            cost: new Decimal(30000),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.8)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
