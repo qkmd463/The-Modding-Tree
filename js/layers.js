@@ -200,12 +200,14 @@ addLayer("r", {
     startData() { return {
         unlocked: true,
 		points: new Decimal(0),
+	    	prestige: new Decimal(0),
+		restart: new Decimal(0),
     }},
     color: "#d93636",
     requires: new Decimal(1e80), // Can be a function that takes requirement increases into account
     resource: "coins", // Name of prestige currency
     baseResource: "prestige", // Name of resource prestige is based on
-    baseAmount() {return player.points}, // Get the current amount of baseResource
+    baseAmount() {return player.p.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.011, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
@@ -218,12 +220,14 @@ addLayer("r", {
     passiveGeneration() { 
 
         },    
-    row: 0, // Row the layer is in on the tree (0 is the first row)
+    row: 2, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "r", description: "r: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "c", description: "c: reset for coins", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
 
+		
+	})
 
 
 
