@@ -123,7 +123,8 @@ addLayer("r", {
             title: "12",
             description: "2x prestige gain.",
             cost: new Decimal(1),
-        },						
+        },
+		}
 })
 
 
