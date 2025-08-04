@@ -87,10 +87,10 @@ addLayer("r", {
         },
 	24: {
             title: "24",
-            description: "points boost restart.",
+            description: "points boost prestige.",
             cost: new Decimal(1e160),
 		            effect() {
-                return player.points.plus(10).pow(0.1).log10()
+                return player.points.plus(10).pow(0.3).log10()
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
 	    },
@@ -118,6 +118,7 @@ addLayer("r", {
         mult = new Decimal(1)
 	if (hasUpgrade('p', 13)) mult = mult.times(2)
 	if (hasUpgrade('p', 22)) mult = mult.times(upgradeEffect('p', 22))
+	if (hasUpgrade('r', 24)) mult = mult.times(upgradeEffect('r', 24))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
