@@ -27,7 +27,7 @@ addLayer("r", {
     },
 doReset(){
   let keep = []
-if (hasUpgrade("r", 24) && resettingLayer=="r") keep.push("upgrades")
+if (hasUpgrade("r", 24)) keep.push("upgrades")
 layerDataReset(layer, keep)
 },
     passiveGeneration() { 
