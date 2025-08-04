@@ -25,6 +25,10 @@ addLayer("r", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
+    doReset(resettingLayer) {
+        let keep = [];
+        if (hasMilestone("r", 24) && resettingLayer=="r") keep.push("upgrades")
+    },
     passiveGeneration() { 
         if (hasUpgrade("r", 23)) return (hasUpgrade("r", 23)?1:0)
         },    
@@ -84,6 +88,11 @@ addLayer("r", {
             title: "23",
             description: "+100% restart/s.",
             cost: new Decimal(1e32),
+        },
+	24: {
+            title: "24",
+            description: "keep restart upgrades on prestige.",
+            cost: new Decimal(1e128),
         },
 	    }
 
