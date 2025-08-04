@@ -24,6 +24,11 @@ addLayer("r", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
+passiveGeneration(){
+let passive = new Decimal(0)
+if (hasUpgrade(‘r’, 32)) passive = passive.add(1)
+return passive
+},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "r", description: "r: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
