@@ -20,6 +20,7 @@ addLayer("r", {
 	if (hasUpgrade('r', 22)) mult = mult.times(upgradeEffect('r', 22))
 	if (hasUpgrade('p', 12)) mult = mult.times(25)
 	if (hasUpgrade('p', 21)) mult = mult.times(upgradeEffect('p', 21))
+	if (hasUpgrade('c', 11)) mult = mult.times(50)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -129,6 +130,7 @@ addLayer("r", {
 	if (hasUpgrade('p', 22)) mult = mult.times(upgradeEffect('p', 22))
 	if (hasUpgrade('r', 24)) mult = mult.times(upgradeEffect('r', 24))
 	if (hasUpgrade('r', 31)) mult = mult.times(upgradeEffect('r', 31))
+	if (hasUpgrade('c', 11)) mult = mult.times(50)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -225,6 +227,13 @@ addLayer("r", {
         {key: "c", description: "c: reset for coins", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+		upgrades: {
+        11: {
+            title: "11",
+            description: "50x points, restart, prestige.",
+            cost: new Decimal(1),
+        },
+	}
 
 		
 	})
