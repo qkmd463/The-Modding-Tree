@@ -87,12 +87,13 @@ addLayer("r", {
         },
 	24: {
             title: "24",
-            description: "points boost prestige.",
+            description: "points boost restart.",
             cost: new Decimal(1e160),
 		            effect() {
-                return player.points.plus(10).pow(0.3).log10()
-        },
-	    }
+                return player.points.plus(10).pow(0.1).log10()
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
+	    },
 	    }
 
 		    
