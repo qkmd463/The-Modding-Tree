@@ -26,7 +26,7 @@ addLayer("r", {
         return new Decimal(1)
     },
     doReset(resettingLayer) {
-        let keep = [];
+        let keep = [upgrades];
         if (hasUpgrade("r", 24) && resettingLayer=="r") keep.push("upgrades")
     },
     passiveGeneration() { 
