@@ -123,6 +123,7 @@ doReset(resettingLayer){
   let keep = []
 if (hasUpgrade("r", 24) && resettingLayer=="r") keep.push("upgrades")
 if (layers[resettingLayer].row > this.row) layerDataReset("r", keep)
+player[this.layer].upgrades = keepupgs
 },
     row: 1, // Row the layer is in on the tree (0 is the first row)
     passiveGeneration() { 
