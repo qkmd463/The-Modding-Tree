@@ -92,7 +92,7 @@ addLayer("r", {
 	24: {
             title: "24",
             description: "keep restart upgrades on prestige.",
-            cost: new Decimal(1e128),
+            cost: new Decimal(1e64),
         },
 	    }
 
@@ -125,7 +125,7 @@ addLayer("r", {
     },
     row: 1, // Row the layer is in on the tree (0 is the first row)
     passiveGeneration() { 
-        if (hasUpgrade("p", 23)) return (hasUpgrade("p", 23)?1:0)
+        if (hasUpgrade("p", 32)) return (hasUpgrade("p", 32)?1:0)
         },    
     hotkeys: [
         {key: "p", description: "p: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -177,7 +177,7 @@ addLayer("r", {
 	23: {
             title: "23",
             description: "+100% prestige/s.",
-            cost: new Decimal(1e11),
+            cost: new Decimal(1e21),
         },
 		}
 })
