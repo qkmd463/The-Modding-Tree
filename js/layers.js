@@ -92,7 +92,7 @@ addLayer("r", {
 	24: {
             title: "24",
             description: "keep restart upgrades on prestige.",
-            cost: new Decimal(1e64),
+            cost: new Decimal(1e50),
         },
 	    }
 
