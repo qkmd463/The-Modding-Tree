@@ -173,7 +173,7 @@ addLayer("r", {
 	23: {
             title: "23",
             description: "+100% prestige/s.",
-            cost: new Decimal(1e21),
+            cost: new Decimal(1e11),
         },
 		}
 })
