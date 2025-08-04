@@ -24,6 +24,8 @@ addLayer("r", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
 doReset(layer){
+  if(layers[layer].row <= layers[this.layer].row || layers[layer].row == "side")return;
+  layerDataReset(this.layer)
  let keep = []
   if(hasUpgrade(<r>,<32>))keep.push("upgrades")
   layerDataReset(this.layer, keep)
