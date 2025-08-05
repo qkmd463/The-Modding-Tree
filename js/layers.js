@@ -302,6 +302,7 @@ addLayer("r", {
             title: "23",
             description: "+100% coins/s.",
             cost: new Decimal(1000000),
+		},
 		}
 		
 	})
