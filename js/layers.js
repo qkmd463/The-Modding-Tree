@@ -244,7 +244,7 @@ addLayer("r", {
         return new Decimal(1)
     },
     passiveGeneration() { 
-
+        if (hasUpgrade("c", 23)) return (hasUpgrade("c", 23)?1:0)
         },    
     row: 2, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
@@ -298,6 +298,10 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 	},
+        23: {
+            title: "23",
+            description: "+100% coins/s.",
+            cost: new Decimal(1000000),
 		}
 		
 	})
