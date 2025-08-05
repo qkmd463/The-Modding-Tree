@@ -203,6 +203,15 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
+	31: {
+            title: "31",
+            description: "restart boost coins.",
+            cost: new Decimal(1e310),
+            effect() {
+                return player.p.points.pow(0.001).log10().plus(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            },
 	}
 	}),
 
@@ -226,6 +235,7 @@ addLayer("r", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 	if (hasUpgrade('p', 24)) mult = mult.times(upgradeEffect('p', 24))
+	if (hasUpgrade('p', 31)) mult = mult.times(upgradeEffect('p', 31))
 	if (hasUpgrade('c', 21)) mult = mult.times(3)
         return mult
     },
