@@ -212,6 +212,15 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
+	32: {
+            title: "32",
+            description: "prestige boost coins.",
+            cost: new Decimal("1e650"),
+            effect() {
+                return player.p.points.pow(0.01).log10().plus(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            },
 	}
 	}),
 
@@ -236,6 +245,7 @@ addLayer("r", {
         mult = new Decimal(1)
 	if (hasUpgrade('p', 24)) mult = mult.times(upgradeEffect('p', 24))
 	if (hasUpgrade('p', 31)) mult = mult.times(upgradeEffect('p', 31))
+	if (hasUpgrade('p', 32)) mult = mult.times(upgradeEffect('p', 32))
 	if (hasUpgrade('c', 21)) mult = mult.times(3)
 	if (hasUpgrade('c', 22)) mult = mult.times(upgradeEffect('c', 22))
         return mult
