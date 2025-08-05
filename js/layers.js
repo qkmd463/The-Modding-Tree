@@ -237,6 +237,7 @@ addLayer("r", {
 	if (hasUpgrade('p', 24)) mult = mult.times(upgradeEffect('p', 24))
 	if (hasUpgrade('p', 31)) mult = mult.times(upgradeEffect('p', 31))
 	if (hasUpgrade('c', 21)) mult = mult.times(3)
+	if (hasUpgrade('c', 22)) mult = mult.times(upgradeEffect('c', 22))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -288,7 +289,14 @@ addLayer("r", {
             description: "3x coins gain.",
             cost: new Decimal(500),
         },
-			
+        22: {
+            title: "22",
+            description: "coins boost coins.",
+            cost: new Decimal(40000),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.12)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 	}
 
 		
