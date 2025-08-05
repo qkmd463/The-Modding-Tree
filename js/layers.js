@@ -208,7 +208,7 @@ addLayer("r", {
             description: "restart boost coins.",
             cost: new Decimal("1e330"),
             effect() {
-                return player.p.points.pow(0.001).log10().plus(1)
+                return player.r.points.pow(0.001).log10().plus(1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
