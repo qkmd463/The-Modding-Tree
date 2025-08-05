@@ -25,6 +25,7 @@ addLayer("r", {
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
+	if (hasUpgrade('r', 32)) exp = exp.add(0.01)
         return new Decimal(1)
     },
     passiveGeneration() { 
@@ -104,6 +105,11 @@ addLayer("r", {
                 return player.r.points.plus(10).pow(1.4).log10()
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
+	    },
+	32: {
+            title: "32",
+            description: "points ^1.01.",
+            cost: new Decimal(1e5000),
 	    },
 	    }
 
