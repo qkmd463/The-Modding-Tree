@@ -264,10 +264,10 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 	},
-        12: {
+        14: {
             title: "14",
             description: "coins boost prestige.",
-            cost: new Decimal(2),
+            cost: new Decimal(4),
             effect() {
                 return player[this.layer].points.add(1).pow(0.9)
             },
@@ -275,16 +275,15 @@ addLayer("r", {
 	},
         21: {
             title: "21",
-            description: "3x coins.",
+            description: "3x coins gain.",
             cost: new Decimal(500),
         },
-	}		
+			
+	}
+
 		
 	})
 
-
-
-    
 
 
 			
