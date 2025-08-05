@@ -206,7 +206,7 @@ addLayer("r", {
 	31: {
             title: "31",
             description: "restart boost coins.",
-            cost: new Decimal(1e310),
+            cost: new Decimal("1e330"),
             effect() {
                 return player.p.points.pow(0.001).log10().plus(1)
             },
