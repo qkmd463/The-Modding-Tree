@@ -25,7 +25,7 @@ addLayer("r", {
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
-	if (hasUpgrade('r', 32)) exp = exp.add(0.01)
+	if (hasUpgrade('r', 32)) exp = exp.plus(0.01)
         return new Decimal(1)
     },
     passiveGeneration() { 
