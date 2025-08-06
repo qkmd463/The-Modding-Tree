@@ -221,7 +221,7 @@ addLayer("r", {
             description: "points boost coins.",
             cost: new Decimal(1e190),
             effect() {
-                return player.points.pow(0.0001).log10().plus(1)
+                return player.points.add(10).pow(0.0001).log10().plus(1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
@@ -230,7 +230,7 @@ addLayer("r", {
             description: "restart boost coins.",
             cost: new Decimal("1e330"),
             effect() {
-                return player.r.points.pow(0.001).log10().plus(1)
+                return player.r.points.add(10).pow(0.001).log10().plus(1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
@@ -239,7 +239,7 @@ addLayer("r", {
             description: "prestige boost coins.",
             cost: new Decimal("1e650"),
             effect() {
-                return player.p.points.pow(0.01).log10().plus(1)
+                return player.p.points.add(10).pow(0.01).log10().plus(1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
