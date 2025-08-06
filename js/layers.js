@@ -238,6 +238,15 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
+	33: {
+            title: "33",
+            description: "points raises points",
+            cost: new Decimal("1e1700"),
+            effect() {
+                return player.points.log10().pow(0.01).plus(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            },
 	}
 	}),
 
