@@ -247,6 +247,15 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
+	34: {
+            title: "34",
+            description: "restart raises points",
+            cost: new Decimal("1e2000"),
+            effect() {
+                return player.points.add(10).log10().pow(0.0001)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            },
 	}
 	}),
 
