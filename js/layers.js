@@ -272,7 +272,7 @@ addLayer("r", {
             },
 	42: {
             title: "42",
-            description: "prestige raises points",
+            description: "coins raises points",
             cost: new Decimal("1e3500"),
             effect() {
                 return player.c.points.add(10).log10().pow(0.0001)
