@@ -107,7 +107,7 @@ addLayer("r", {
 	    },
 	32: {
             title: "32",
-            description: "points ^1.01.",
+            description: "points ^1.001.",
             cost: new Decimal("1e5000"),
 	    },
 	    }
