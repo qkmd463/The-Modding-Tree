@@ -22,7 +22,7 @@ addLayer("r", {
 	if (hasUpgrade('p', 21)) mult = mult.times(upgradeEffect('p', 21))
 	if (hasUpgrade('c', 11)) mult = mult.times(50)
 	if (hasUpgrade('c', 13)) mult = mult.times(upgradeEffect('c', 13))
-	if (hasUpgrade('r', 33)) mult = mult.pow(1.005)
+	if (hasUpgrade('r', 33)) mult = mult.pow(1.006)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -113,12 +113,12 @@ addLayer("r", {
 	    },
 	33: {
             title: "33",
-            description: "restart ^1.005.",
+            description: "restart ^1.006.",
             cost: new Decimal("1e7000"),
 	    },
 	34: {
             title: "34",
-            description: "prestige ^1.007.",
+            description: "prestige ^1.009.",
             cost: new Decimal("1e8000"),
 	    },
 	    }
@@ -149,7 +149,7 @@ addLayer("r", {
 	if (hasUpgrade('r', 31)) mult = mult.times(upgradeEffect('r', 31))
 	if (hasUpgrade('c', 11)) mult = mult.times(50)
 	if (hasUpgrade('c', 14)) mult = mult.times(upgradeEffect('c', 14))
-	if (hasUpgrade('r', 24)) mult = mult.pow(1.007)
+	if (hasUpgrade('r', 34)) mult = mult.pow(1.009)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
