@@ -22,7 +22,7 @@ addLayer("r", {
 	if (hasUpgrade('p', 21)) mult = mult.times(upgradeEffect('p', 21))
 	if (hasUpgrade('c', 11)) mult = mult.times(50)
 	if (hasUpgrade('c', 13)) mult = mult.times(upgradeEffect('c', 13))
-	if (hasUpgrade('r', 33)) mult = mult.pow(1.003)
+	if (hasUpgrade('r', 33)) mult = mult.pow(1.03)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -113,7 +113,7 @@ addLayer("r", {
 	    },
 	33: {
             title: "33",
-            description: "restart ^1.003.",
+            description: "restart ^1.03.",
             cost: new Decimal("1e7000"),
 	    },
 	    }
