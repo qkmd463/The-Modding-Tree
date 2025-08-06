@@ -243,7 +243,7 @@ addLayer("r", {
             description: "points raises points",
             cost: new Decimal("1e1700"),
             effect() {
-                return player.points.add(10).log10().pow(0.01)
+                return player.points.add(10).log10().pow(0.0001)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
