@@ -256,8 +256,8 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
-	34: {
-            title: "34",
+	41: {
+            title: "41",
             description: "prestige raises points",
             cost: new Decimal("1e2500"),
             effect() {
