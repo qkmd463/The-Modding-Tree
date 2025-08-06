@@ -114,7 +114,7 @@ addLayer("r", {
 	33: {
             title: "33",
             description: "restart ^1.003.",
-            cost: new Decimal("1e5400"),
+            cost: new Decimal("1e7000"),
 	    },
 	    }
 
