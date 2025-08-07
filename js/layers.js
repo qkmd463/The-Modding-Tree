@@ -294,7 +294,7 @@ addLayer("r", {
 	44: {
             title: "44",
             description: "prestige raises restart",
-            cost: new Decimal("1e16000"),
+            cost: new Decimal("1e17000"),
             effect() {
                 return player.p.points.add(10).log10().pow(0.00005)
             },
