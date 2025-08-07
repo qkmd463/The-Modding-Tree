@@ -414,8 +414,17 @@ addLayer("r", {
 		},
 		32: {
             title: "32",
-            description: "coins raises restart",
-            cost: new Decimal("1e300"),
+            description: "prestige raises points",
+            cost: new Decimal("1e400"),
+            effect() {
+                return player.c.points.add(10).log10().pow(0.000025)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		33: {
+            title: "33",
+            description: "prestige raises restart",
+            cost: new Decimal("1e500"),
             effect() {
                 return player.c.points.add(10).log10().pow(0.000025)
             },
