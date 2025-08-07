@@ -278,7 +278,7 @@ addLayer("r", {
             description: "points raises restart",
             cost: new Decimal("1e8000"),
             effect() {
-                return player.points.add(10).log10().pow(0.0002)
+                return player.points.add(10).log10().pow(0.00005)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
@@ -287,7 +287,7 @@ addLayer("r", {
             description: "restart raises restart",
             cost: new Decimal("1e11000"),
             effect() {
-                return player.r.points.add(10).log10().pow(0.0002)
+                return player.r.points.add(10).log10().pow(0.00005)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
