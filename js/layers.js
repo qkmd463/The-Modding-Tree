@@ -399,16 +399,25 @@ addLayer("r", {
             description: "coins raises points",
             cost: new Decimal("1e200"),
             effect() {
-                return player.points.add(10).log10().pow(0.000025)
+                return player.c.points.add(10).log10().pow(0.000025)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 		31: {
             title: "31",
             description: "coins raises restart",
-            cost: new Decimal("1e200"),
+            cost: new Decimal("1e300"),
             effect() {
-                return player.points.add(10).log10().pow(0.000025)
+                return player.c.points.add(10).log10().pow(0.000025)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		32: {
+            title: "32",
+            description: "coins raises restart",
+            cost: new Decimal("1e300"),
+            effect() {
+                return player.c.points.add(10).log10().pow(0.000025)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
