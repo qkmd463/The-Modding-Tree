@@ -274,7 +274,7 @@ addLayer("r", {
 	42: {
             title: "42",
             description: "points raises restart",
-            cost: new Decimal("1e10000"),
+            cost: new Decimal("1e8000"),
             effect() {
                 return player.points.add(10).log10().pow(0.00012)
             },
