@@ -403,7 +403,7 @@ addLayer("r", {
             description: "coins raises points",
             cost: new Decimal("1e200"),
             effect() {
-                return player.c.points.add(10).log10().pow(0.00001)
+                return player.c.points.add(10).log10().pow(0.0001)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -412,7 +412,7 @@ addLayer("r", {
             description: "coins raises restart",
             cost: new Decimal("1e300"),
             effect() {
-                return player.c.points.add(10).log10().pow(0.00001)
+                return player.c.points.add(10).log10().pow(0.0001)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -421,7 +421,7 @@ addLayer("r", {
             description: "points raises prestige",
             cost: new Decimal("1e400"),
             effect() {
-                return player.points.add(10).log10().pow(0.00001)
+                return player.points.add(10).log10().pow(0.0001)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -430,7 +430,7 @@ addLayer("r", {
             description: "restart raises prestige",
             cost: new Decimal("1e500"),
             effect() {
-                return player.r.points.add(10).log10().pow(0.00001)
+                return player.r.points.add(10).log10().pow(0.0001)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -439,7 +439,7 @@ addLayer("r", {
             description: "prestige raises prestige",
             cost: new Decimal("1e600"),
             effect() {
-                return player.p.points.add(10).log10().pow(0.00001)
+                return player.p.points.add(10).log10().pow(0.0001)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -448,7 +448,7 @@ addLayer("r", {
             description: "coins raises prestige",
             cost: new Decimal("1e700"),
             effect() {
-                return player.c.points.add(10).log10().pow(0.00001)
+                return player.c.points.add(10).log10().pow(0.0001)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
