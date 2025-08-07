@@ -26,7 +26,6 @@ addLayer("r", {
 	if (hasUpgrade('p', 42)) mult = mult.pow(upgradeEffect('p', 42))
 	if (hasUpgrade('p', 43)) mult = mult.pow(upgradeEffect('p', 43))
 	if (hasUpgrade('p', 44)) mult = mult.pow(upgradeEffect('p', 44))
-	if (hasUpgrade('c', 31)) mult = mult.pow(upgradeEffect('c', 31))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -159,6 +158,7 @@ addLayer("r", {
 	if (hasUpgrade('c', 11)) mult = mult.times(50)
 	if (hasUpgrade('c', 14)) mult = mult.times(upgradeEffect('c', 14))
 	if (hasUpgrade('r', 34)) mult = mult.pow(1.009)
+	if (hasUpgrade('c', 33)) mult = mult.pow(upgradeEffect('c', 34))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -414,17 +414,35 @@ addLayer("r", {
 		},
 		32: {
             title: "32",
-            description: "prestige raises points",
+            description: "points raises prestige",
             cost: new Decimal("1e400"),
             effect() {
-                return player.c.points.add(10).log10().pow(0.000025)
+                return player.points.add(10).log10().pow(0.000025)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 		33: {
             title: "33",
-            description: "prestige raises restart",
+            description: "restart raises prestige",
             cost: new Decimal("1e500"),
+            effect() {
+                return player.r.points.add(10).log10().pow(0.000025)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		34: {
+            title: "34",
+            description: "prestige raises prestige",
+            cost: new Decimal("1e600"),
+            effect() {
+                return player.p.points.add(10).log10().pow(0.000025)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		41: {
+            title: "41",
+            description: "coins raises prestige",
+            cost: new Decimal("1e700"),
             effect() {
                 return player.c.points.add(10).log10().pow(0.000025)
             },
