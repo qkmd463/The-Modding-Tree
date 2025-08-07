@@ -291,7 +291,15 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
-
+	44: {
+            title: "44",
+            description: "prestige raises restart",
+            cost: new Decimal("1e17000"),
+            effect() {
+                return player.p.points.add(10).log10().pow(0.00005)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            },
 	}
 	}),
 
