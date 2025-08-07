@@ -122,11 +122,6 @@ addLayer("r", {
             description: "prestige ^1.009.",
             cost: new Decimal("1e8000"),
 	    },
-	41: {
-            title: "41",
-            description: "coins ^1.5.",
-            cost: new Decimal("1e16000"),
-	    },
 	    }
 
 		    
@@ -274,7 +269,7 @@ addLayer("r", {
 	42: {
             title: "42",
             description: "points raises restart",
-            cost: new Decimal("1e3500"),
+            cost: new Decimal("1e10000"),
             effect() {
                 return player.points.add(10).log10().pow(0.00008)
             },
@@ -307,7 +302,7 @@ addLayer("r", {
 	if (hasUpgrade('p', 32)) mult = mult.times(upgradeEffect('p', 32))
 	if (hasUpgrade('c', 21)) mult = mult.times(3)
 	if (hasUpgrade('c', 22)) mult = mult.times(upgradeEffect('c', 22))
-	if (hasUpgrade('r', 41)) mult = mult.pow(1.5)
+	if (hasUpgrade('c', 24)) mult = mult.pow(1.5)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -373,6 +368,11 @@ addLayer("r", {
             description: "+100% coins/s.",
             cost: new Decimal(1000000),
 		},
+		24: {
+            title: "24",
+            description: "coins ^1.5.",
+            cost: new Decimal(1e50),
+	    },
 		}
 		
 	})
