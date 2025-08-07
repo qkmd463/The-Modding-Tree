@@ -403,8 +403,8 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
-		24: {
-            title: "24",
+		31: {
+            title: "31",
             description: "coins raises restart",
             cost: new Decimal("1e200"),
             effect() {
