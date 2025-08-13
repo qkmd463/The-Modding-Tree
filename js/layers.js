@@ -27,6 +27,7 @@ addLayer("r", {
 	if (hasUpgrade('p', 43)) mult = mult.pow(upgradeEffect('p', 43))
 	if (hasUpgrade('p', 44)) mult = mult.pow(upgradeEffect('p', 44))
 	if (hasUpgrade('c', 31)) mult = mult.pow(upgradeEffect('c', 31))
+	if (hasUpgrade('d', 11)) mult = mult.times(1e6)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -163,6 +164,7 @@ addLayer("r", {
 	if (hasUpgrade('c', 33)) mult = mult.pow(upgradeEffect('c', 33))
 	if (hasUpgrade('c', 34)) mult = mult.pow(upgradeEffect('c', 34))
 	if (hasUpgrade('c', 41)) mult = mult.pow(upgradeEffect('c', 41))
+	if (hasUpgrade('d', 11)) mult = mult.times(1e6)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -333,6 +335,7 @@ addLayer("r", {
 	if (hasUpgrade('c', 21)) mult = mult.times(3)
 	if (hasUpgrade('c', 22)) mult = mult.times(upgradeEffect('c', 22))
 	if (hasUpgrade('r', 41)) mult = mult.pow(1.5)
+	if (hasUpgrade('d', 11)) mult = mult.times(1e6)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -454,7 +457,47 @@ addLayer("r", {
 		},
 		}
 		
-	})
+	}),
+
+		addLayer("d", {
+    name: "diamonds", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "d", // This appears on the layer's node. Default is the id with the first letter capitalized
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+	    restart: new Decimal(0),
+		coins: new Decimal(0),
+    }},
+    color: "#30a19d",
+    requires: new Decimal("1e24000"), // Can be a function that takes requirement increases into account
+    resource: "diamonds", // Name of prestige currency
+    baseResource: "coins", // Name of resource prestige is based on
+    baseAmount() {return player.r.points}, // Get the current amount of baseResource
+    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.000003, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 1, // Row the layer is in on the tree (0 is the first row)
+    passiveGeneration() { 
+        },    
+    hotkeys: [
+        {key: "d", description: "d: reset for diamonds", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    layerShown(){return true},
+		upgrades: {
+        11: {
+            title: "11",
+            description: "1000000x points, restart, prestige, coins.",
+            cost: new Decimal(1),
+        },
+		}
+		})
 
 
 
