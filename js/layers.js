@@ -336,6 +336,7 @@ addLayer("r", {
 	if (hasUpgrade('c', 22)) mult = mult.times(upgradeEffect('c', 22))
 	if (hasUpgrade('r', 41)) mult = mult.pow(1.5)
 	if (hasUpgrade('d', 11)) mult = mult.times(1e6)
+	if (hasUpgrade('c', 42)) mult = mult.pow(upgradeEffect('c', 42))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -452,6 +453,15 @@ addLayer("r", {
             cost: new Decimal("1e700"),
             effect() {
                 return player.c.points.add(10).log10().pow(0.0001)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		42: {
+            title: "42",
+            description: "points raises coins",
+            cost: new Decimal("1e24007"),
+            effect() {
+                return player.points.add(10).log10().pow(0.0001)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
