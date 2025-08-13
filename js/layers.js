@@ -469,7 +469,7 @@ addLayer("r", {
 		43: {
             title: "43",
             description: "restart raises coins",
-            cost: new Decimal("1e90000"),
+            cost: new Decimal("1e30000"),
             effect() {
                 return player.r.points.add(10).log10().pow(0.01)
             },
