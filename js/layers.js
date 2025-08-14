@@ -517,6 +517,7 @@ addLayer("r", {
     exponent: 0.000003, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+	if (hasUpgrade('d', 11)) mult = mult.times(1.7)		
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -557,6 +558,11 @@ addLayer("r", {
                 return player.d.points.add(10).log10().pow(0.01)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		21: {
+            title: "21",
+            description: "x1.7 diamonds.",
+            cost: new Decimal(1), 
 		},
 		}
 		})
