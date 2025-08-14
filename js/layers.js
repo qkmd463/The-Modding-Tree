@@ -530,6 +530,9 @@ addLayer("r", {
 	if (hasUpgrade('r', 42)) mult = mult.pow(2.5)
 	if (hasUpgrade('d', 33)) mult = mult.pow(upgradeEffect('d', 33))
 	if (hasUpgrade('d', 34)) mult = mult.pow(upgradeEffect('d', 34))
+	if (hasUpgrade('d', 41)) mult = mult.pow(upgradeEffect('d', 41))
+	if (hasUpgrade('d', 42)) mult = mult.pow(upgradeEffect('d', 42))
+	if (hasUpgrade('d', 43)) mult = mult.pow(upgradeEffect('d', 43))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -633,6 +636,33 @@ addLayer("r", {
             cost: new Decimal(1e125),
             effect() {
                 return player.r.points.add(10).log10().pow(0.06)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		41: {
+            title: "41",
+            description: "prestige raises diamonds",
+            cost: new Decimal("1e420"),
+            effect() {
+                return player.p.points.add(10).log10().pow(0.06)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		42: {
+            title: "42",
+            description: "coins raises diamonds",
+            cost: new Decimal(1e125),
+            effect() {
+                return player.c.points.add(10).log10().pow(0.06)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		43: {
+            title: "44",
+            description: "diamonds raises diamonds",
+            cost: new Decimal(1e125),
+            effect() {
+                return player.d.points.add(10).log10().pow(0.06)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
