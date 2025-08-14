@@ -526,6 +526,7 @@ addLayer("r", {
     },
     row: 3, // Row the layer is in on the tree (0 is the first row)
     passiveGeneration() { 
+        if (hasUpgrade("c", 23)) return (hasUpgrade("d", 23)?1:0)
         },    
     hotkeys: [
         {key: "d", description: "d: reset for diamonds", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -573,6 +574,11 @@ addLayer("r", {
                 return player.d.points.add(10).log10().pow(2.5)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+        23: {
+            title: "23",
+            description: "+100% diamonds/s.",
+            cost: new Decimal(100),
 		},
 		}
 		})
