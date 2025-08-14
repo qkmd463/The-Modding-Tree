@@ -586,7 +586,7 @@ addLayer("r", {
             description: "diamonds boosts coins.",
             cost: new Decimal(10000),
             effect() {
-                return player.d.points.add(1).pow(5000)
+                return player.d.points.add(1).pow(50000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
