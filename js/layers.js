@@ -145,7 +145,7 @@ addLayer("r", {
             description: "diamonds boosts restart",
             cost: new Decimal("1e3e10"),
             effect() {
-                return player.d.points.add(1).pow(5000000)
+                return player.d.points.add(1).pow(1500000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
