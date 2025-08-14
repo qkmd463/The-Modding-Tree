@@ -612,7 +612,7 @@ addLayer("r", {
             description: "coins raises coins",
             cost: new Decimal(1e36),
             effect() {
-                return player.d.points.add(10).log10().pow(0.015)
+                return player.d.points.add(10).log10().pow(0.03)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
