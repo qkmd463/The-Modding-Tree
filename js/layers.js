@@ -661,7 +661,7 @@ addLayer("r", {
 		43: {
             title: "43",
             description: "diamonds raises diamonds",
-            cost: new Decimal("1e420"),
+            cost: new Decimal("1e890"),
             effect() {
                 return player.d.points.add(10).log10().pow(0.04)
             },
