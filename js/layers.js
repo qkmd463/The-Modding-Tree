@@ -134,6 +134,11 @@ addLayer("r", {
             description: "coins ^1.5.",
             cost: new Decimal("1e16000"),
 	    },
+	42: {
+            title: "41",
+            description: "diamonds ^2.5.",
+            cost: new Decimal("1e30000000"),
+	    },
 	    }
 
 		    
@@ -521,6 +526,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 21)) mult = mult.times(1.7)	
 	if (hasUpgrade('d', 22)) mult = mult.times(upgradeEffect('d', 22))
 	if (hasUpgrade('d', 31)) mult = mult.times(upgradeEffect('d', 31))
+	if (hasUpgrade('r', 42)) mult = mult.pow(2.5)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
