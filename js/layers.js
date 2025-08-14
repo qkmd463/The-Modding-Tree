@@ -473,7 +473,7 @@ addLayer("r", {
 		43: {
             title: "43",
             description: "restart raises coins",
-            cost: new Decimal("1e24700"),
+            cost: new Decimal("1e26000"),
             effect() {
                 return player.r.points.add(10).log10().pow(0.03)
             },
@@ -482,7 +482,7 @@ addLayer("r", {
 		44: {
             title: "44",
             description: "prestige raises coins",
-            cost: new Decimal("1e25500"),
+            cost: new Decimal("1e32000"),
             effect() {
                 return player.p.points.add(10).log10().pow(0.03)
             },
