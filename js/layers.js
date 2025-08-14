@@ -630,41 +630,7 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
-		34: {
-            title: "34",
-            description: "restart raises diamonds",
-            cost: new Decimal(1e125),
-            effect() {
-                return player.r.points.add(10).log10().pow(0.04)
-            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-		},
-		41: {
-            title: "41",
-            description: "prestige raises diamonds",
-            cost: new Decimal("1e420"),
-            effect() {
-                return player.p.points.add(10).log10().pow(0.04)
-            },
-            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-		},
-		42: {
-            title: "42",
-            description: "coins raises diamonds",
-            cost: new Decimal(1e125),
-            effect() {
-                return player.c.points.add(10).log10().pow(0.04)
-            },
-            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-		},
-		43: {
-            title: "44",
-            description: "diamonds raises diamonds",
-            cost: new Decimal(1e125),
-            effect() {
-                return player.d.points.add(10).log10().pow(0.04)
-            },
-            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-		},
+
 		}
 		})
 
