@@ -348,6 +348,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 12)) mult = mult.times(upgradeEffect('d', 12))
 	if (hasUpgrade('d', 13)) mult = mult.pow(1.01)
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
+	if (hasUpgrade('d', 24)) mult = mult.times(upgradeEffect('d', 24)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -579,6 +580,15 @@ addLayer("r", {
             title: "23",
             description: "+100% diamonds/s.",
             cost: new Decimal(100),
+		},
+	    24: {
+            title: "24",
+            description: "diamonds boosts coins.",
+            cost: new Decimal(10000),
+            effect() {
+                return player.d.points.add(1).pow(5000)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 		}
 		})
