@@ -626,7 +626,7 @@ addLayer("r", {
             description: "points raises diamonds",
             cost: new Decimal(1e52),
             effect() {
-                return player.points.add(10).log10().pow(0.06)
+                return player.points.add(10).log10().pow(0.04)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -635,8 +635,7 @@ addLayer("r", {
             description: "restart raises diamonds",
             cost: new Decimal(1e125),
             effect() {
-                return player.r.points.add(10).log10().pow(0.06)
-            },
+                return player.r.points.add(10).log10().pow(0.04)
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 		41: {
@@ -644,7 +643,7 @@ addLayer("r", {
             description: "prestige raises diamonds",
             cost: new Decimal("1e420"),
             effect() {
-                return player.p.points.add(10).log10().pow(0.06)
+                return player.p.points.add(10).log10().pow(0.04)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -653,7 +652,7 @@ addLayer("r", {
             description: "coins raises diamonds",
             cost: new Decimal(1e125),
             effect() {
-                return player.c.points.add(10).log10().pow(0.06)
+                return player.c.points.add(10).log10().pow(0.04)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -662,7 +661,7 @@ addLayer("r", {
             description: "diamonds raises diamonds",
             cost: new Decimal(1e125),
             effect() {
-                return player.d.points.add(10).log10().pow(0.06)
+                return player.d.points.add(10).log10().pow(0.04)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
