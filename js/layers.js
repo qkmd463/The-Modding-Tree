@@ -151,7 +151,7 @@ addLayer("r", {
 		},
 	44: {
             title: "44",
-            description: "diamonds boosts restart",
+            description: "diamonds boosts prestige",
             cost: new Decimal("1e3.5e10"),
             effect() {
                 return player.d.points.add(1).pow(100000)
