@@ -520,6 +520,7 @@ addLayer("r", {
         mult = new Decimal(1)
 	if (hasUpgrade('d', 21)) mult = mult.times(1.7)	
 	if (hasUpgrade('d', 22)) mult = mult.times(upgradeEffect('d', 22))
+	if (hasUpgrade('d', 31)) mult = mult.times(upgradeEffect('d', 31))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
