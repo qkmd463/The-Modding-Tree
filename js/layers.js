@@ -375,6 +375,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('d', 24)) mult = mult.times(upgradeEffect('d', 24))
 	if (hasUpgrade('d', 32)) mult = mult.pow(upgradeEffect('d', 32))
+	if (inChallengee('d', 11)) mult = mult.pow(0.0001)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -696,6 +697,16 @@ addLayer("r", {
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 		},
+    challenges: {
+        11: {
+            name: "11",
+            challengeDescription: "cd",
+            goalDescription: "100 coins",
+            rewardDescription: "rd",
+            canComplete() {
+                return (player.c.points.gte(100))
+            },
+            completionLimit: 1,
 		})
 
 
