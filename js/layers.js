@@ -375,7 +375,6 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('d', 24)) mult = mult.times(upgradeEffect('d', 24))
 	if (hasUpgrade('d', 32)) mult = mult.pow(upgradeEffect('d', 32))
-	if (inChallengee('d', 11)) mult = mult.pow(0.0001)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
