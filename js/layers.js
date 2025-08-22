@@ -32,6 +32,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 13)) mult = mult.pow(1.01)
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 43)) mult = mult.times(upgradeEffect('r', 43))
+	if (inChallengee('d', 11)) mult = mult.pow(0.0001)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -196,6 +197,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 13)) mult = mult.pow(1.01)
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 44)) mult = mult.times(upgradeEffect('r', 44))
+	if (inChallengee('d', 11)) mult = mult.pow(0.0001)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -375,6 +377,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('d', 24)) mult = mult.times(upgradeEffect('d', 24))
 	if (hasUpgrade('d', 32)) mult = mult.pow(upgradeEffect('d', 32))
+	if (inChallengee('d', 11)) mult = mult.pow(0.0001)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -700,10 +703,10 @@ addLayer("r", {
         11: {
             name: "11",
             challengeDescription: "cd",
-            goalDescription: "100 coins",
+            goalDescription: "1e100000 coins",
             rewardDescription: "rd",
             canComplete() {
-                return (player.c.points.gte(100))
+                return (player.c.points.gte("1e100000"))
             },
             completionLimit: 1,
 		},
