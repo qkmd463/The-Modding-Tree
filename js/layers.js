@@ -706,7 +706,8 @@ addLayer("r", {
                 return (player.c.points.gte(100))
             },
             completionLimit: 1,
-		}
+		},
+	}
 		})
 
 
