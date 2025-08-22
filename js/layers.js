@@ -34,7 +34,8 @@ addLayer("r", {
 	if (hasUpgrade('r', 43)) mult = mult.times(upgradeEffect('r', 43))
         return mult
     },
-    gainExp() { // Calculate the exponent on main currency from bonuses
+    gainExp() { // Calculate the exponent on main currency from bonuse
+        if (inChallenge('c', 11)) exp = new Decimal(0.0001)
         return new Decimal(1)
     },
     passiveGeneration() { 
