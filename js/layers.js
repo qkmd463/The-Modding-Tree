@@ -154,7 +154,7 @@ addLayer("r", {
             description: "diamonds boosts prestige",
             cost: new Decimal("1e3.5e10"),
             effect() {
-                return player.d.points.add(1).pow(75000)
+                return player.d.points.add(1).pow(60000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
