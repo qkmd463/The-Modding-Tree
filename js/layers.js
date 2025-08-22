@@ -704,7 +704,7 @@ addLayer("r", {
     challenges: {
         11: {
             name: "diamond challenge",
-            challengeDescription: "cd",
+            challengeDescription: "points, restart, prestige, coins ^0.0001",
             goalDescription: "1e33800 coins",
             rewardDescription: "1e100x diamonds",
             canComplete() {
