@@ -379,6 +379,7 @@ addLayer("r", {
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
+    if (inChallenge('c', 11)) mult = new Decimal(0.0001)
     },
     passiveGeneration() { 
         if (hasUpgrade("c", 23)) return (hasUpgrade("c", 23)?1:0)
