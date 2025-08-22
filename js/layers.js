@@ -14,7 +14,7 @@ addLayer("r", {
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.08, // Prestige currency exponent
     softcap: Decimal.pow(10,1e7),
-    softcapPower: 0.5,
+    softcapPower: 0.08,
     softcap: Decimal.pow(10,1e11),
     softcapPower: 0.01,
     gainMult() { // Calculate the multiplier for main currency from bonuses
