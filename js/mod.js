@@ -59,7 +59,7 @@ function getPointGen() {
 	if (hasUpgrade('d', 13)) gain = gain.pow(1.01)
 	if (hasUpgrade('d', 44)) gain = gain.times(upgradeEffect('d', 44))
 	if (inChallenge('d', 11)) gain = gain.pow(0.0001)
-    softcap: new Decimal("e1e12"),
+    softcap: new Decimal(Decimal.pow(10,1e12)),
     softcapPower: 0.1,
 	return gain
 }
