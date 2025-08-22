@@ -696,17 +696,6 @@ addLayer("r", {
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 		},
-challenges: {
-    11: {
-        name: "11",
-        challengeDescription: "0",
-        canComplete: function() {return player.c.points.gte(100)},
-		onEnter()
-			{
-    return player.p.points.add(1).pow(0.001)
-    },
-}
-			
 		})
 
 
