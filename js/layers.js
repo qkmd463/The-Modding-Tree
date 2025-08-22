@@ -589,7 +589,7 @@ addLayer("r", {
 		},
 		14: {
             title: "14",
-            description: "diamonds raises points, restart, prestige, coins",
+            description: "diamonds raises restart, prestige, coins",
             cost: new Decimal(1),
             effect() {
                 return player.d.points.add(10).log10().pow(0.01)
