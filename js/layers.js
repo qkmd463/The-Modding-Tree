@@ -13,10 +13,6 @@ addLayer("r", {
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.08, // Prestige currency exponent
-    softcap: Decimal.pow(10,1e7),
-    softcapPower: 0.04,
-    softcap: Decimal.pow(10,1e11),
-    softcapPower: 0.01,
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 	if (hasUpgrade('r', 13)) mult = mult.times(upgradeEffect('r', 13))
@@ -561,7 +557,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 41)) mult = mult.pow(upgradeEffect('d', 41))
 	if (hasUpgrade('d', 42)) mult = mult.pow(upgradeEffect('d', 42))
 	if (hasUpgrade('d', 43)) mult = mult.pow(upgradeEffect('d', 43))
-	if (hasChallenge('d', 11)) mult = mult.times(1e100)	
+	if (hasChallenge('d', 11)) mult = mult.times(1e50)	
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -710,7 +706,7 @@ addLayer("r", {
             name: "diamond challenge",
             challengeDescription: "points, restart, prestige, coins ^0.0001",
             goalDescription: "1e33800 coins",
-            rewardDescription: "1e100x diamonds",
+            rewardDescription: "1e50x diamonds",
             canComplete() {
                 return (player.c.points.gte("1e33800"))
             },
