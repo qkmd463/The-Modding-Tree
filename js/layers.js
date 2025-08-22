@@ -557,6 +557,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 41)) mult = mult.pow(upgradeEffect('d', 41))
 	if (hasUpgrade('d', 42)) mult = mult.pow(upgradeEffect('d', 42))
 	if (hasUpgrade('d', 43)) mult = mult.pow(upgradeEffect('d', 43))
+	if (hasChallenge('d', 11)) mult = mult.times(1e100)	
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -702,12 +703,12 @@ addLayer("r", {
 		},
     challenges: {
         11: {
-            name: "11",
+            name: "diamond challenge",
             challengeDescription: "cd",
-            goalDescription: "1e100000 coins",
-            rewardDescription: "rd",
+            goalDescription: "1e33800 coins",
+            rewardDescription: "1e100x diamonds",
             canComplete() {
-                return (player.c.points.gte("1e100000"))
+                return (player.c.points.gte("1e33800"))
             },
             completionLimit: 1,
 		},
