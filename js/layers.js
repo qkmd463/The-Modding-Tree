@@ -208,6 +208,7 @@ addLayer("r", {
 	if (hasUpgrade('r', 44)) mult = mult.times(upgradeEffect('r', 44))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
+	if (hasMilestone('pl', 3)) mult = mult.pow(8.4)		
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -412,6 +413,10 @@ addLayer("r", {
         {key: "c", description: "c: reset for coins", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    doReset(resettingLayer) {
+        let keep = [];
+        if (hasMilestone("pl", 3) && resettingLayer<="pl") keep.push("upgrades")
+        if (layers[resettingLayer].row > this.row) layerDataReset(this.layer, keep)
 		upgrades: {
         11: {
             title: "11",
@@ -798,6 +803,11 @@ addLayer("r", {
             requirementDescription: "3 planet",
             effectDescription: "keep prestige upgrades, restart ^1.5.",
             done() { return player.pl.points.gte(3) }
+		},
+        3: {
+            requirementDescription: "4 planet",
+            effectDescription: "keep coins upgrades, prestige ^8.4.",
+            done() { return player.pl.points.gte(4) }
 		},
 		}
 			})
