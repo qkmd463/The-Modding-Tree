@@ -542,6 +542,37 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
+		},
+		buyables:{
+11: {
+title: “cb1”,
+unlocked() { return true },
+cost(x) {
+let exp1 = new Decimal(1.2)
+let exp2 = new Decimal (1.1005)
+return new Decimal("e5.32e11").mul(Decimal.pow(exp1, x)).mul(Decimal.pow(x , Decimal.pow(exp2 , x)))).floor()
+},
+display() {
+return “Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " A-Points” + "
+Bought: " + getBuyableAmount(this.layer, this.id) + “
+Effect: Nothing” + format(buyableEffect(this.layer, this.id))
+},
+canAfford() {
+return player.c.points.gte(this.cost())
+},
+buy() {
+let cost = new Decimal (1)
+player.c.points = player.c.points.sub(this.cost().mul(cost))
+setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+},
+effect(x) {
+let base1 = new Decimal(1.46)
+let base2 = x
+let expo = new Decimal(1.012)
+let eff = base1.pow(Decimal.pow(base2, expo)).times(buyableEffect(‘mE’, 14).pow(0.2))
+return eff
+},
+},
 		}
 		
 	}),
