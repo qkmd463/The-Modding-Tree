@@ -33,8 +33,6 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 43)) mult = mult.times(upgradeEffect('r', 43))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
-	if (hasMilestone('pl', 2)) mult = mult.pow(1.5)
-		
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -52,7 +50,7 @@ addLayer("r", {
     layerShown(){return true},
     doReset(resettingLayer) {
         let keep = [];
-        if (hasMilestone("pl", 1) && resettingLayer=="pl") keep.push("upgrades")
+        if (hasMilestone("pl", 0) && resettingLayer=="pl") keep.push("upgrades")
         if (layers[resettingLayer].row > 3) layerDataReset(this.layer, keep)
 	},
 	    upgrades: {
@@ -207,7 +205,6 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 44)) mult = mult.times(upgradeEffect('r', 44))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
-	if (hasMilestone('pl', 2)) mult = mult.times(1e7)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -223,10 +220,6 @@ addLayer("r", {
         {key: "p", description: "p: reset for prestige", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    doReset(resettingLayer) {
-        let keep = [];
-        if (hasMilestone("pl", 2) && resettingLayer=="pl") keep.push("upgrades")
-        if (layers[resettingLayer].row > 3) layerDataReset(this.layer, keep)
 		upgrades: {
         11: {
             title: "11",
@@ -751,9 +744,9 @@ addLayer("r", {
     baseResource: "diamonds", // Name of resource prestige is based on
     baseAmount() {return player.d.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 14, // Prestige currency exponent
+    exponent: 15, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
-        mult = new Decimal(1)
+        mult = new Decimal(0.5)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
     },
@@ -781,15 +774,9 @@ addLayer("r", {
             effectDescription: "keep restart upgrades, points ^1.1",
             done() { return player.pl.points.gte(2) }
         },
-        2: {
-            requirementDescription: "3 planet",
-            effectDescription: "keep prestige upgrades, restart ^1.5",
-            done() { return player.pl.points.gte(3) }
-        },
 		}
 			})
 
-			
 
 			
 
