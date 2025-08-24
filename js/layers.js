@@ -785,7 +785,7 @@ addLayer("r", {
 	upgrades: {
 	    11: {
             title: "11",
-            description: "planet boost all previous currencies.",
+            description: "planet boost previous currencies.",
             cost: new Decimal(3),
             effect() {
                 return player.pl.points.add(1).pow(13000000)
@@ -805,7 +805,7 @@ addLayer("r", {
     milestones: {
         0: {
             requirementDescription: "1 planet",
-            effectDescription: "x10000000 all previous currencies.",
+            effectDescription: "x10000000 previous currencies.",
             done() { return player.pl.points.gte(1) }
         },
         1: {
