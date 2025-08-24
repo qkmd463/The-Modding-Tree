@@ -806,7 +806,7 @@ addLayer("r", {
             done() { return player.pl.points.gte(3) }
 		},
         3: {
-            requirementDescription: "3 planet",
+            requirementDescription: "4 planet",
             effectDescription: "keep coins upgrades, prestige ^8.4.",
             done() { return player.pl.points.gte(4) }
 		},
