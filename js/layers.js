@@ -914,6 +914,7 @@ addLayer("r", {
             effectDescription: "^10000000 previous currencies.",
             done() { return player.pl.points.gte(8) }
 		},
+		}
 			})
 
 
