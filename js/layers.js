@@ -36,6 +36,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 2)) mult = mult.pow(1.5)
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
+	if (hasUpgrade('pl', 14)) mult = mult.pow(upgradeEffect('pl', 14))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -825,6 +826,15 @@ addLayer("r", {
             cost: new Decimal(7),
             effect() {
                 return player.pl.points.add(1).mul(5)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		14: {
+            title: "14",
+            description: "planet raise restart.",
+            cost: new Decimal(8),
+            effect() {
+                return player.pl.points.add(1).mul(4)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
