@@ -560,7 +560,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 41)) mult = mult.pow(upgradeEffect('d', 41))
 	if (hasUpgrade('d', 42)) mult = mult.pow(upgradeEffect('d', 42))
 	if (hasUpgrade('d', 43)) mult = mult.pow(upgradeEffect('d', 43))
-	if (hasChallenge('d', 11)) mult = mult.times(1e100)
+	if (hasChallenge('d', 11)) mult = mult.times("1e1000")
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
     },
@@ -710,7 +710,7 @@ addLayer("r", {
             name: "diamond challenge",
             challengeDescription: "points, restart, prestige, coins ^0.0001",
             goalDescription: "1e33800 coins",
-            rewardDescription: "1e100x diamonds",
+            rewardDescription: "1e1000x diamonds",
             canComplete() {
                 return (player.c.points.gte("1e33800"))
             },
