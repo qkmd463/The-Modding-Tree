@@ -743,11 +743,11 @@ addLayer("r", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 3, // Row the layer is in on the tree (0 is the first row)
+    row: 4, // Row the layer is in on the tree (0 is the first row)
     passiveGeneration() { 
         },    
     hotkeys: [
-        {key: "d", description: "d: reset for diamonds", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "l", description: "l: reset for planet", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
 			})
