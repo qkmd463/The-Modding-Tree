@@ -51,8 +51,7 @@ addLayer("r", {
     layerShown(){return true},
     doReset(resettingLayer) {
         let keep = [];
-        if (layers[resettingLayer].row > this.row) layerDataReset(this.layer, keep)
-        if (hasMilestone("pl", 1) && resettingLayer=="pl") keep.push("upgrades")
+        if (hasMilestone("pl", 1) && resettingLayer<="pl") keep.push("upgrades")
         if (layers[resettingLayer].row > this.row) layerDataReset(this.layer, keep)
 	},
 	    upgrades: {
@@ -224,7 +223,7 @@ addLayer("r", {
     layerShown(){return true},
     doReset(resettingLayer) {
         let keep = [];
-        if (hasMilestone("pl", 1) && resettingLayer=="pl") keep.push("upgrades")
+        if (hasMilestone("pl", 1) && resettingLayer<="pl") keep.push("upgrades")
         if (layers[resettingLayer].row > this.row) layerDataReset(this.layer, keep)
 	},
 		upgrades: {
