@@ -768,6 +768,17 @@ addLayer("r", {
 	canBuyMax(){
 	return true
  },
+	upgrades: {
+	    11: {
+            title: "11",
+            description: "planet boost all previous currencies.",
+            cost: new Decimal(3),
+            effect() {
+                return player.pl.points.add(1).pow(1000000)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		}
     milestones: {
         0: {
             requirementDescription: "1 planet",
@@ -781,7 +792,7 @@ addLayer("r", {
         },
         2: {
             requirementDescription: "3 planet",
-            effectDescription: "keep prestige upgrades, restart ^10.",
+            effectDescription: "keep prestige upgrades, restart ^1.5.",
             done() { return player.pl.points.gte(3) }
 		},
 		}
