@@ -214,6 +214,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasMilestone('pl', 3)) mult = mult.pow(8.4)
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
+	if (hasUpgrade('pl', 15)) mult = mult.pow(upgradeEffect('pl', 15))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -405,6 +406,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
+	if (hasUpgrade('pl', 21)) mult = mult.pow(upgradeEffect('pl', 21))
 	if (hasMilestone('pl', 4)) mult = mult.pow(76.3)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
@@ -597,6 +599,7 @@ addLayer("r", {
 	if (hasChallenge('d', 11)) mult = mult.times("1e1000")
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
+	if (hasUpgrade('pl', 22)) mult = mult.pow(upgradeEffect('pl', 22))
 	if (hasMilestone('pl', 5)) mult = mult.pow(920)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -823,7 +826,7 @@ addLayer("r", {
 		13: {
             title: "13",
             description: "planet raise points.",
-            cost: new Decimal(7),
+            cost: new Decimal(5),
             effect() {
                 return player.pl.points.add(1).mul(5)
             },
@@ -832,9 +835,36 @@ addLayer("r", {
 		14: {
             title: "14",
             description: "planet raise restart.",
-            cost: new Decimal(8),
+            cost: new Decimal(6),
             effect() {
                 return player.pl.points.add(1).mul(4)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		15: {
+            title: "15",
+            description: "planet raise prestige.",
+            cost: new Decimal(7),
+            effect() {
+                return player.pl.points.add(1).mul(3)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		21: {
+            title: "21",
+            description: "planet raise coins.",
+            cost: new Decimal(8),
+            effect() {
+                return player.pl.points.add(1).mul(2)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		22: {
+            title: "22",
+            description: "planet raise diamonds.",
+            cost: new Decimal(9),
+            effect() {
+                return player.pl.points.add(1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
