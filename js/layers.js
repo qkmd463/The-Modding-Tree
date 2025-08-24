@@ -33,7 +33,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 43)) mult = mult.times(upgradeEffect('r', 43))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
-	if (hasMilestone('pl', 3)) mult = mult.pow(1.5)
+	if (hasMilestone('pl', 2)) mult = mult.pow(1.5)
 		
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
@@ -52,7 +52,7 @@ addLayer("r", {
     layerShown(){return true},
     doReset(resettingLayer) {
         let keep = [];
-        if (hasMilestone("pl", 2) && resettingLayer=="pl") keep.push("upgrades")
+        if (hasMilestone("pl", 1) && resettingLayer=="pl") keep.push("upgrades")
         if (layers[resettingLayer].row > 3) layerDataReset(this.layer, keep)
 	},
 	    upgrades: {
@@ -225,7 +225,7 @@ addLayer("r", {
     layerShown(){return true},
     doReset(resettingLayer) {
         let keep = [];
-        if (hasMilestone("pl", 3) && resettingLayer=="pl") keep.push("upgrades")
+        if (hasMilestone("pl", 2) && resettingLayer=="pl") keep.push("upgrades")
         if (layers[resettingLayer].row > 3) layerDataReset(this.layer, keep)
 		upgrades: {
         11: {
