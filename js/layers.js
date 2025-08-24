@@ -48,10 +48,6 @@ addLayer("r", {
         {key: "r", description: "r: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    doReset(resettingLayer) {
-        let keep = [];
-        if (hasMilestone("pl", 0) && resettingLayer=="pl") keep.push("upgrades")
-	}
 	    upgrades: {
         11: {
             title: "11",
@@ -735,6 +731,7 @@ addLayer("r", {
 		points: new Decimal(0),
 	    restart: new Decimal(0),
 		coins: new Decimal(0),
+		diamonds: new Decimal(0),
     }},
     color: "#a7bf0b",
     requires: new Decimal("1e1600000"), // Can be a function that takes requirement increases into account
