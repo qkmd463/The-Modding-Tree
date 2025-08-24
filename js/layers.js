@@ -33,6 +33,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 43)) mult = mult.times(upgradeEffect('r', 43))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
+	if (hasMilestone('pl', 1)) mult = mult.pow(1.1)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -771,7 +772,7 @@ addLayer("r", {
         },
         1: {
             requirementDescription: "2 planet",
-            effectDescription: "keep restart upgrades",
+            effectDescription: "keep restart upgrades, points ^1.1",
             done() { return player.pl.points.gte(2) }
         },
 		}
