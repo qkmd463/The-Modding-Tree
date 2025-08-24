@@ -35,6 +35,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasMilestone('pl', 2)) mult = mult.pow(1.5)
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
+	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -209,6 +210,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasMilestone('pl', 3)) mult = mult.pow(8.4)
+	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -397,6 +399,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 32)) mult = mult.pow(upgradeEffect('d', 32))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
+	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -585,6 +588,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasChallenge('d', 11)) mult = mult.times("1e1000")
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
+	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
     },
@@ -788,6 +792,14 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
+		12: {
+            title: "12",
+            description: "planet raises all previous currencies",
+            cost: new Decimal(4),
+            effect() {
+                return player.pl.points.add(1).div(10).add(1).
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
     milestones: {
         0: {
