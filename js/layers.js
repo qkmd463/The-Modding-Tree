@@ -402,6 +402,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
+	if (hasMilestone('pl', 4)) mult = mult.pow(76.3)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -607,6 +608,11 @@ addLayer("r", {
         {key: "d", description: "d: reset for diamonds", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    doReset(resettingLayer) {
+        let keep = [];
+        if (hasMilestone("pl", 4) && resettingLayer<="pl") keep.push("upgrades")
+        if (hasMilestone("pl", 4) && resettingLayer<="pl") keep.push("challenges")
+        if (layers[resettingLayer].row > this.row) layerDataReset(this.layer, keep)
 		upgrades: {
         11: {
             title: "11",
@@ -815,18 +821,23 @@ addLayer("r", {
         },
         1: {
             requirementDescription: "2 planet",
-            effectDescription: "keep restart upgrades, points ^1.1.",
+            effectDescription: "keep restart upgrades. points ^1.1.",
             done() { return player.pl.points.gte(2) }
         },
         2: {
             requirementDescription: "3 planet",
-            effectDescription: "keep prestige upgrades, restart ^1.5.",
+            effectDescription: "keep prestige upgrades. restart ^1.5.",
             done() { return player.pl.points.gte(3) }
 		},
         3: {
             requirementDescription: "4 planet",
-            effectDescription: "keep coins upgrades, prestige ^8.4.",
+            effectDescription: "keep coins upgrades. prestige ^8.4.",
             done() { return player.pl.points.gte(4) }
+		},
+        4: {
+            requirementDescription: "5 planet",
+            effectDescription: "keep diamonds upgrades, challenges. coins ^76.3.",
+            done() { return player.pl.points.gte(5) }
 		},
 		}
 			})
