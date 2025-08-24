@@ -823,7 +823,7 @@ addLayer("r", {
             effectDescription: "keep coins upgrades, prestige ^8.4.",
             done() { return player.pl.points.gte(4) }
 		},
-		}
+		},
 			})
 
 
