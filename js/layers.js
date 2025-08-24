@@ -553,7 +553,7 @@ let exp2 = new Decimal (1.1005)
 return new Decimal("e5.32e11").mul(Decimal.pow(exp1, x)).mul(Decimal.pow(x , Decimal.pow(exp2 , x)))).floor()
 },
 display() {
-return “Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " A-Points” + "
+return “Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " c-Points” + "
 Bought: " + getBuyableAmount(this.layer, this.id) + “
 Effect: Nothing” + format(buyableEffect(this.layer, this.id))
 },
