@@ -37,11 +37,12 @@ addLayer("r", {
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (hasUpgrade('pl', 14)) mult = mult.pow(upgradeEffect('pl', 14))
+	if (hasMilestone('pl', 6)) mult = mult.pow(1e7)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
- 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(0.00000001).mul("e1e21")
+ 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(1e-8).mul("e1e21")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
@@ -216,11 +217,12 @@ addLayer("r", {
 	if (hasMilestone('pl', 3)) mult = mult.pow(8.4)
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (hasUpgrade('pl', 15)) mult = mult.pow(upgradeEffect('pl', 15))
+	if (hasMilestone('pl', 6)) mult = mult.pow(1e7)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
- 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(0.00000001).mul("e1e21")
+ 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(1e-8).mul("e1e21")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -410,11 +412,12 @@ addLayer("r", {
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (hasUpgrade('pl', 21)) mult = mult.pow(upgradeEffect('pl', 21))
 	if (hasMilestone('pl', 4)) mult = mult.pow(76.3)
+	if (hasMilestone('pl', 6)) mult = mult.pow(1e7)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
- 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(0.00000001).mul("e1e21")
+ 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(1e-8).mul("e1e21")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -608,7 +611,7 @@ addLayer("r", {
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
- 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(0.00000001).mul("e1e21")
+ 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(1e-8).mul("e1e21")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -794,7 +797,7 @@ addLayer("r", {
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
- 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(0.00000001).mul("e1e21")
+ 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(1e-8).mul("e1e21")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -902,15 +905,14 @@ addLayer("r", {
             done() { return player.pl.points.gte(5) }
 		},
         5: {
-            requirementDescription: "6" planet",
-            effectDescription: "diamonds ^920.",
-            done() { return player.pl.points.gte(6) }
-		},
-        5: {
             requirementDescription: "7 planet",
-            effectDescription: "^10000000 previous currencies.",
-            done() { return player.pl.points.gte(7) }
+            effectDescription: "diamonds ^920.",
+            done() { return player.pl.points.gte(8) }
 		},
+        6: {
+            requirementDescription: "8 planet",
+            effectDescription: "^10000000 previous currencies.",
+            done() { return player.pl.points.gte(8) }
 		},
 			})
 
