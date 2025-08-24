@@ -819,6 +819,15 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
+		13: {
+            title: "13",
+            description: "planet raise points.",
+            cost: new Decimal(7),
+            effect() {
+                return player.pl.points.add(1).mul(5)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
 		},
     milestones: {
         0: {
@@ -847,9 +856,9 @@ addLayer("r", {
             done() { return player.pl.points.gte(5) }
 		},
         5: {
-            requirementDescription: "7 planet",
+            requirementDescription: "8 planet",
             effectDescription: "diamonds ^920.",
-            done() { return player.pl.points.gte(7) }
+            done() { return player.pl.points.gte(8) }
 		},
 		},
 			})
