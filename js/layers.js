@@ -417,6 +417,7 @@ addLayer("r", {
         let keep = [];
         if (hasMilestone("pl", 3) && resettingLayer<="pl") keep.push("upgrades")
         if (layers[resettingLayer].row > this.row) layerDataReset(this.layer, keep)
+		}
 		upgrades: {
         11: {
             title: "11",
