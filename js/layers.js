@@ -38,6 +38,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
+ 	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
@@ -213,6 +214,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
+ 	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -402,6 +404,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
+ 	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -590,6 +593,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
+ 	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -767,6 +771,7 @@ addLayer("r", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(0.5)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
+ 	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
