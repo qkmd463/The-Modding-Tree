@@ -33,7 +33,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 43)) mult = mult.times(upgradeEffect('r', 43))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
-	if (hasMilestone('pl', 2)) mult = mult.pow(3)
+	if (hasMilestone('pl', 2)) mult = mult.pow(1.5)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
