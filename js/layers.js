@@ -828,7 +828,7 @@ addLayer("r", {
             description: "planet raise points.",
             cost: new Decimal(5),
             effect() {
-                return player.pl.points.add(1).mul(500)
+                return player.pl.points.add(1).mul(90)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -837,7 +837,7 @@ addLayer("r", {
             description: "planet raise restart.",
             cost: new Decimal(6),
             effect() {
-                return player.pl.points.add(1).mul(400)
+                return player.pl.points.add(1).mul(80)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -846,7 +846,7 @@ addLayer("r", {
             description: "planet raise prestige.",
             cost: new Decimal(7),
             effect() {
-                return player.pl.points.add(1).mul(300)
+                return player.pl.points.add(1).mul(70)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -855,7 +855,7 @@ addLayer("r", {
             description: "planet raise coins.",
             cost: new Decimal(8),
             effect() {
-                return player.pl.points.add(1).mul(200)
+                return player.pl.points.add(1).mul(60)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -864,7 +864,7 @@ addLayer("r", {
             description: "planet raise diamonds.",
             cost: new Decimal(9),
             effect() {
-                return player.pl.points.add(100)
+                return player.pl.points.add(50)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
