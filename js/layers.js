@@ -774,7 +774,7 @@ addLayer("r", {
             description: "planet boost all previous currencies.",
             cost: new Decimal(3),
             effect() {
-                return player.pl.points.add(1).pow(1000000)
+                return player.pl.points.add(1).pow(1500000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
