@@ -48,6 +48,10 @@ addLayer("r", {
         {key: "r", description: "r: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    doReset(resettingLayer) {
+        let keep = [];
+        if (hasMilestone("pl", 0) && resettingLayer=="pl") keep.push("upgrades")
+	},
 	    upgrades: {
         11: {
             title: "11",
