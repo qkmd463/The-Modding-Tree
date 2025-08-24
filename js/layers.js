@@ -55,6 +55,7 @@ addLayer("r", {
         if (hasMilestone("pl", 1) && resettingLayer=="p") keep.push("upgrades")
         if (hasMilestone("pl", 1) && resettingLayer=="c") keep.push("upgrades")
         if (hasMilestone("pl", 1) && resettingLayer=="d") keep.push("upgrades")
+        if (layers[resettingLayer].row > 3) layerDataReset(this.layer, keep)
 	},
 	    upgrades: {
         11: {
@@ -229,6 +230,7 @@ addLayer("r", {
         if (hasMilestone("pl", 1) && resettingLayer=="p") keep.push("upgrades")
         if (hasMilestone("pl", 1) && resettingLayer=="c") keep.push("upgrades")
         if (hasMilestone("pl", 1) && resettingLayer=="d") keep.push("upgrades")
+        if (layers[resettingLayer].row > 3) layerDataReset(this.layer, keep)
 	},
 		upgrades: {
         11: {
