@@ -778,7 +778,7 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
-		}
+		},
     milestones: {
         0: {
             requirementDescription: "1 planet",
