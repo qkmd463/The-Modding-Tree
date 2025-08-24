@@ -613,6 +613,7 @@ addLayer("r", {
         if (hasMilestone("pl", 4) && resettingLayer<="pl") keep.push("upgrades")
         if (hasMilestone("pl", 4) && resettingLayer<="pl") keep.push("challenges")
         if (layers[resettingLayer].row > this.row) layerDataReset(this.layer, keep)
+		},
 		upgrades: {
         11: {
             title: "11",
@@ -839,7 +840,7 @@ addLayer("r", {
             effectDescription: "keep diamonds upgrades, challenges. coins ^76.3.",
             done() { return player.pl.points.gte(5) }
 		},
-		}
+		},
 			})
 
 
