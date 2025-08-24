@@ -208,7 +208,7 @@ addLayer("r", {
 	if (hasUpgrade('r', 44)) mult = mult.times(upgradeEffect('r', 44))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
-	if (hasMilestone('pl', 3)) mult = mult.pow(8.4)		
+	if (hasMilestone('pl', 3)) mult = mult.pow(8.4)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -417,7 +417,7 @@ addLayer("r", {
         let keep = [];
         if (hasMilestone("pl", 3) && resettingLayer<="pl") keep.push("upgrades")
         if (layers[resettingLayer].row > this.row) layerDataReset(this.layer, keep)
-		}
+	},
 		upgrades: {
         11: {
             title: "11",
@@ -784,7 +784,7 @@ addLayer("r", {
             description: "planet boost all previous currencies.",
             cost: new Decimal(3),
             effect() {
-                return player.pl.points.add(1).pow(13000000)
+                return player.pl.points.add(1).pow(1300000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -806,7 +806,7 @@ addLayer("r", {
             done() { return player.pl.points.gte(3) }
 		},
         3: {
-            requirementDescription: "4 planet",
+            requirementDescription: "3 planet",
             effectDescription: "keep coins upgrades, prestige ^8.4.",
             done() { return player.pl.points.gte(4) }
 		},
