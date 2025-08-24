@@ -794,10 +794,10 @@ addLayer("r", {
 		},
 		12: {
             title: "12",
-            description: "planet raises all previous currencies",
+            description: "planet raises previous currencies.",
             cost: new Decimal(4),
             effect() {
-                return player.pl.points.add(1).div(10).add(1).
+                return player.pl.points.add(1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -823,8 +823,9 @@ addLayer("r", {
             effectDescription: "keep coins upgrades, prestige ^8.4.",
             done() { return player.pl.points.gte(4) }
 		},
-		},
+		}
 			})
+
 
 
 			
