@@ -710,14 +710,47 @@ addLayer("r", {
             name: "diamond challenge",
             challengeDescription: "points, restart, prestige, coins ^0.0001",
             goalDescription: "1e33800 coins",
-            rewardDescription: "1e1000x diamonds",
+            rewardDescription: "x1e1000x diamonds",
             canComplete() {
                 return (player.c.points.gte("1e33800"))
             },
             completionLimit: 1,
 		},
 	}
-		})
+		}),
+			addLayer("pl", {
+    name: "planet", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "pl", // This appears on the layer's node. Default is the id with the first letter capitalized
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+	    restart: new Decimal(0),
+		coins: new Decimal(0),
+    }},
+    color: "#a7bf0b",
+    requires: new Decimal("1e1600000"), // Can be a function that takes requirement increases into account
+    resource: "planet", // Name of prestige currency
+    baseResource: "diamonds", // Name of resource prestige is based on
+    baseAmount() {return player.d.points}, // Get the current amount of baseResource
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.000001, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+ 	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 3, // Row the layer is in on the tree (0 is the first row)
+    passiveGeneration() { 
+        },    
+    hotkeys: [
+        {key: "d", description: "d: reset for diamonds", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    layerShown(){return true},
+			})
 
 			
 
