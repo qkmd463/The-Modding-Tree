@@ -777,12 +777,12 @@ addLayer("r", {
         },
         1: {
             requirementDescription: "2 planet",
-            effectDescription: "keep restart upgrades, points ^1.1",
+            effectDescription: "keep restart upgrades, points ^1.1.",
             done() { return player.pl.points.gte(2) }
         },
         2: {
             requirementDescription: "3 planet",
-            effectDescription: "keep prestige upgrades, restart ^1.5",
+            effectDescription: "keep prestige upgrades, restart ^1.5.",
             done() { return player.pl.points.gte(3) }
 		},
 		}
