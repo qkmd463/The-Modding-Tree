@@ -784,6 +784,7 @@ addLayer("r", {
             requirementDescription: "3 planet",
             effectDescription: "keep prestige upgrades, restart ^1.5",
             done() { return player.pl.points.gte(3) }
+		},
 		}
 			})
 
