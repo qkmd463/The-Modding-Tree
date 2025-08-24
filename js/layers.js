@@ -32,6 +32,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 13)) mult = mult.pow(1.01)
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 43)) mult = mult.times(upgradeEffect('r', 43))
+	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -198,6 +199,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 13)) mult = mult.pow(1.01)
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 44)) mult = mult.times(upgradeEffect('r', 44))
+	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -379,6 +381,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('d', 24)) mult = mult.times(upgradeEffect('d', 24))
 	if (hasUpgrade('d', 32)) mult = mult.pow(upgradeEffect('d', 32))
+	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -560,6 +563,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 41)) mult = mult.pow(upgradeEffect('d', 41))
 	if (hasUpgrade('d', 42)) mult = mult.pow(upgradeEffect('d', 42))
 	if (hasUpgrade('d', 43)) mult = mult.pow(upgradeEffect('d', 43))
+	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasChallenge('d', 11)) mult = mult.times("1e1000")
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -750,9 +754,21 @@ addLayer("r", {
         {key: "l", description: "l: reset for planet", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
- canBuyMax(){
-return true
- }
+	canBuyMax(){
+	return true
+ },
+    milestones: {
+        0: {
+            requirementDescription: "1 planet",
+            effectDescription: "x10000000 all previous currencies.",
+            done() { return player.pl.points.gte(1) }
+        },
+        1: {
+            requirementDescription: "2 planet",
+            effectDescription: "keep restart upgrades",
+            done() { return player.pl.points.gte(2) }
+        },
+		}
 			})
 
 			
