@@ -750,6 +750,7 @@ addLayer("r", {
         {key: "l", description: "l: reset for planet", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+ canBuyMax(){}
 			})
 
 			
