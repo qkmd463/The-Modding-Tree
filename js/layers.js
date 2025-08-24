@@ -34,6 +34,7 @@ addLayer("r", {
 	if (hasUpgrade('r', 43)) mult = mult.times(upgradeEffect('r', 43))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasMilestone('pl', 2)) mult = mult.pow(1.5)
+	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -206,6 +207,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 14)) mult = mult.pow(upgradeEffect('d', 14))
 	if (hasUpgrade('r', 44)) mult = mult.times(upgradeEffect('r', 44))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
+	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -393,6 +395,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 24)) mult = mult.times(upgradeEffect('d', 24))
 	if (hasUpgrade('d', 32)) mult = mult.pow(upgradeEffect('d', 32))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
+	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
@@ -575,6 +578,7 @@ addLayer("r", {
 	if (hasUpgrade('d', 43)) mult = mult.pow(upgradeEffect('d', 43))
 	if (hasMilestone('pl', 0)) mult = mult.times(1e7)
 	if (hasChallenge('d', 11)) mult = mult.times("1e1000")
+	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
         return mult
     },
@@ -774,7 +778,7 @@ addLayer("r", {
             description: "planet boost all previous currencies.",
             cost: new Decimal(3),
             effect() {
-                return player.pl.points.add(1).pow(1500000)
+                return player.pl.points.add(1).pow(1300000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
