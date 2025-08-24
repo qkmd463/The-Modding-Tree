@@ -596,6 +596,7 @@ addLayer("r", {
 	if (hasChallenge('d', 11)) mult = mult.times("1e1000")
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
+	if (hasMilestone('pl', 5)) mult = mult.pow(920)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
@@ -844,6 +845,11 @@ addLayer("r", {
             requirementDescription: "5 planet",
             effectDescription: "keep diamonds upgrades, challenges. coins ^76.3.",
             done() { return player.pl.points.gte(5) }
+		},
+        5: {
+            requirementDescription: "7 planet",
+            effectDescription: "diamonds ^920.",
+            done() { return player.pl.points.gte(7) }
 		},
 		},
 			})
