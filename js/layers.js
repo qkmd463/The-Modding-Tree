@@ -835,7 +835,7 @@ addLayer("r", {
 		13: {
             title: "13",
             description: "planet raise points.",
-            cost: new Decimal(5),
+            cost: new Decimal(8),
             effect() {
                 return player.pl.points.add(1).mul(1000)
             },
@@ -844,7 +844,7 @@ addLayer("r", {
 		14: {
             title: "14",
             description: "planet raise restart.",
-            cost: new Decimal(6),
+            cost: new Decimal(9),
             effect() {
                 return player.pl.points.add(1).mul(100)
             },
@@ -853,7 +853,7 @@ addLayer("r", {
 		15: {
             title: "15",
             description: "planet raise prestige.",
-            cost: new Decimal(7),
+            cost: new Decimal(11),
             effect() {
                 return player.pl.points.add(1).mul(21)
             },
@@ -862,7 +862,7 @@ addLayer("r", {
 		21: {
             title: "21",
             description: "planet raise coins.",
-            cost: new Decimal(8),
+            cost: new Decimal(13),
             effect() {
                 return player.pl.points.add(1).mul(8)
             },
@@ -871,7 +871,7 @@ addLayer("r", {
 		22: {
             title: "22",
             description: "planet raise diamonds.",
-            cost: new Decimal(9),
+            cost: new Decimal(14),
             effect() {
                 return player.pl.points.add(4)
             },
