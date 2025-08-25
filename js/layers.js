@@ -873,7 +873,7 @@ addLayer("r", {
             description: "planet raise diamonds.",
             cost: new Decimal(14),
             effect() {
-                return player.pl.points.add(4)
+                return player.pl.points.add(1).mul(4)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
