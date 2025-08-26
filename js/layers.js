@@ -261,6 +261,51 @@ addLayer("rr", {
             description: "+100% restart+/s.",
             cost: new Decimal(1000),
         },
+		24: {
+            title: "24",
+            description: "restart+ raise points.",
+            cost: new Decimal(1500),
+            effect() {
+                return player.rr.points.add(10).log10().pow(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		31: {
+            title: "31",
+            description: "restart+ raise restart.",
+            cost: new Decimal(2500),
+            effect() {
+                return player.rr.points.add(10).log10().pow(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		32: {
+            title: "32",
+            description: "restart+ raise prestige.",
+            cost: new Decimal(5000),
+            effect() {
+                return player.rr.points.add(10).log10().pow(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		33: {
+            title: "33",
+            description: "restart+ raise coins.",
+            cost: new Decimal(7500),
+            effect() {
+                return player.rr.points.add(10).log10().pow(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		34: {
+            title: "34",
+            description: "restart+ raise diamonds.",
+            cost: new Decimal(10000),
+            effect() {
+                return player.rr.points.add(10).log10().pow(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
 		}
 	}),
 	addLayer("p", {
