@@ -214,7 +214,7 @@ addLayer("r+", {
         },    
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "R", description: "R: reset for restart", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "R", description: "R: reset for restart+", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
     doReset(resettingLayer) {
