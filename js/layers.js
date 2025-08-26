@@ -794,6 +794,7 @@ addLayer("r", {
     exponent: 14, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(0.5)
+	if (hasUpgrade('pl', 23)) mult = mult.times(upgradeEffect('pl', 23))
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
@@ -879,10 +880,10 @@ addLayer("r", {
 		},
 		23: {
             title: "23",
-            description: "planet boost points.",
+            description: "points boost planet.",
             cost: new Decimal(14),
             effect() {
-                return player.pl.points.tetrate(2.5).pow(1e30).mul(1)
+                return player.pl.points.add(1).log().log().div(20)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
