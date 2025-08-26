@@ -40,6 +40,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
 	if (hasUpgrade('pl', 24)) mult = mult.times(upgradeEffect('pl', 24))
 	if (hasUpgrade('pl', 34)) mult = mult.pow(upgradeEffect('pl', 34))
+	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -225,6 +226,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
 	if (hasUpgrade('pl', 25)) mult = mult.times(upgradeEffect('pl', 25))
 	if (hasUpgrade('pl', 35)) mult = mult.pow(upgradeEffect('pl', 35))
+	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -425,6 +427,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
 	if (hasUpgrade('pl', 31)) mult = mult.times(upgradeEffect('pl', 31))
 	if (hasUpgrade('pl', 41)) mult = mult.pow(upgradeEffect('pl', 41))
+	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -625,6 +628,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
 	if (hasUpgrade('pl', 32)) mult = mult.times(upgradeEffect('pl', 32))
 	if (hasUpgrade('pl', 42)) mult = mult.pow(upgradeEffect('pl', 42))
+	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
@@ -980,6 +984,15 @@ addLayer("r", {
             cost: new Decimal(19),
             effect() {
                 return player.d.points.add(10).log10().pow(0.8)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		43: {
+            title: "43",
+            description: "planet raise previous currencies.",
+            cost: new Decimal(50),
+            effect() {
+                return player.d.points.add(1).pow(19)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
