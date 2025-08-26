@@ -992,7 +992,7 @@ addLayer("r", {
             description: "planet raise previous currencies.",
             cost: new Decimal(50),
             effect() {
-                return player.d.points.add(1).pow(19)
+                return player.pl.points.add(1).pow(19)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
