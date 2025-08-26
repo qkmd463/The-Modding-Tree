@@ -364,9 +364,6 @@ addLayer("rr", {
             requirementDescription: "1e17 restart+",
             effectDescription: "diamonds boost restart+.",
             done() { return player.rr.points.gte(1e17) }
-	            effect() {
-                return player.d.points.add(10)
-            },
         },
 		},
 	}),
