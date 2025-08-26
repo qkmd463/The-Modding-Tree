@@ -883,7 +883,7 @@ addLayer("r", {
             description: "points boost planet.",
             cost: new Decimal(14),
             effect() {
-                return player.pl.points.add(1).log().log().div(20)
+                return player.points.add(1).log().log().div(20)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
