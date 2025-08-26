@@ -208,9 +208,10 @@ addLayer("r+", {
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
         return new Decimal(1)
+	if (hasUpgrade('r+', 22)) mult = mult.times(upgradeEffect('r+', 22))
     },
     passiveGeneration() { 
-
+        if (hasUpgrade("r+", 23)) return (hasUpgrade("r+", 23)?1:0)
         },    
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
@@ -245,6 +246,20 @@ addLayer("r+", {
             title: "21",
             description: "e1e100x diamonds gain.",
             cost: new Decimal(250),
+        },
+		22: {
+            title: "22",
+            description: "restart+ boost restart+",
+            cost: new Decimal(500),
+            effect() {
+                return player.r+.points.add(1).pow(0.25)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+        23: {
+            title: "23",
+            description: "+100% restart+/s.",
+            cost: new Decimal(1000),
         },
 		}
 	}),
