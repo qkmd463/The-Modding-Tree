@@ -51,6 +51,7 @@ addLayer("r", {
  	if(mult.gte("e1e24")) mult=mult.div("e1e24").pow(1e-16).mul("e1e24")
  	if(mult.gte("e1e27")) mult=mult.div("e1e27").pow(1e-32).mul("e1e27")
  	if(mult.gte("e1e30")) mult=mult.div("e1e30").pow(1e-64).mul("e1e30")
+ 	if(mult.gte("e1e33")) mult=mult.div("e1e33").tetrate(0.5).mul("e1e33")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
@@ -332,7 +333,7 @@ addLayer("rr", {
 		43: {
             title: "43",
             description: "prestige boost restart+.",
-            cost: new Decimal(3000000),
+            cost: new Decimal(1e10),
             effect() {
                 return player.p.points.add(10).log10().log(10).add(1).mul(10)
             },
@@ -341,7 +342,7 @@ addLayer("rr", {
 		44: {
             title: "44",
             description: "coinst boost restart+.",
-            cost: new Decimal(50000000),
+            cost: new Decimal(1e14),
             effect() {
                 return player.c.points.add(10).log10().log(10).add(1).mul(10)
             },
@@ -402,6 +403,7 @@ addLayer("rr", {
  	if(mult.gte("e1e24")) mult=mult.div("e1e24").pow(1e-16).mul("e1e24")
  	if(mult.gte("e1e27")) mult=mult.div("e1e27").pow(1e-32).mul("e1e27")
  	if(mult.gte("e1e30")) mult=mult.div("e1e30").pow(1e-64).mul("e1e30")
+ 	if(mult.gte("e1e33")) mult=mult.div("e1e33").tetrate(0.5).mul("e1e33")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -605,6 +607,7 @@ addLayer("rr", {
  	if(mult.gte("e1e24")) mult=mult.div("e1e24").pow(1e-16).mul("e1e24")
  	if(mult.gte("e1e27")) mult=mult.div("e1e27").pow(1e-32).mul("e1e27")
  	if(mult.gte("e1e30")) mult=mult.div("e1e30").pow(1e-64).mul("e1e30")
+ 	if(mult.gte("e1e33")) mult=mult.div("e1e33").tetrate(0.5).mul("e1e33")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -807,6 +810,7 @@ addLayer("rr", {
  	if(mult.gte("e1e24")) mult=mult.div("e1e24").pow(1e-16).mul("e1e24")
  	if(mult.gte("e1e27")) mult=mult.div("e1e27").pow(1e-32).mul("e1e27")
  	if(mult.gte("e1e30")) mult=mult.div("e1e30").pow(1e-64).mul("e1e30")
+ 	if(mult.gte("e1e33")) mult=mult.div("e1e33").tetrate(0.5).mul("e1e33")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
