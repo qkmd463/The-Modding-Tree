@@ -68,6 +68,7 @@ function getPointGen() {
 	if (hasUpgrade('pl', 23)) gain = gain.pow(upgradeEffect('pl', 33))
 	if (hasUpgrade('pl', 43)) gain = gain.pow(upgradeEffect('pl', 43))
 	if (hasUpgrade('rr', 12)) gain = gain.times("e1e100")
+	if (hasUpgrade('rr', 24)) gain = gain.pow(upgradeEffect('rr', 24))
 	if (inChallenge('d', 11)) gain = gain.pow(0.0001)
  	if(gain.gte("e1e12")) gain=gain.div("e1e12").pow(0.1).mul("e1e12")
  	if(gain.gte("e1e15")) gain=gain.div("e1e15").pow(0.01).mul("e1e15")
