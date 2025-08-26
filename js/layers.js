@@ -990,7 +990,7 @@ addLayer("r", {
 		43: {
             title: "43",
             description: "planet raise previous currencies.",
-            cost: new Decimal(50),
+            cost: new Decimal(20),
             effect() {
                 return player.pl.points.add(1).pow(19)
             },
