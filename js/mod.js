@@ -77,7 +77,7 @@ function getPointGen() {
  	if(gain.gte("e1e24")) gain=gain.div("e1e24").pow(1e-16).mul("e1e24")
  	if(gain.gte("e1e27")) gain=gain.div("e1e27").pow(1e-32).mul("e1e27")
  	if(gain.gte("e1e30")) gain=gain.div("e1e30").pow(1e-64).mul("e1e30")
- 	if(gain.gte("e1e33")) gain=gain.div("e1e33").tetrate(0.1).mul("e1e33")
+ 	if(gain.gte("e1e33")) gain=gain.div("e1e33").log().mul("e1e33")
 	return gain
 }
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
