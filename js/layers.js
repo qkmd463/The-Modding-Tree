@@ -41,7 +41,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 24)) mult = mult.times(upgradeEffect('pl', 24))
 	if (hasUpgrade('pl', 34)) mult = mult.pow(upgradeEffect('pl', 34))
 	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
-	if (hasUpgrade('r+', 12)) mult = mult.times("e1e100")
+	if (hasUpgrade('rr', 12)) mult = mult.times("e1e100")
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -186,7 +186,7 @@ addLayer("r", {
 		    
 }),
 
-addLayer("r+", {
+addLayer("rr", {
     name: "restart+", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "r+", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -204,14 +204,14 @@ addLayer("r+", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 	if (hasUpgrade('pl', 44)) mult = mult.times(2)
-	if (hasUpgrade('r+', 22)) mult = mult.times(upgradeEffect('r+', 22))
+	if (hasUpgrade('rr', 22)) mult = mult.times(upgradeEffect('r+', 22))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
         return new Decimal(1)
     },
     passiveGeneration() { 
-        if (hasUpgrade("r+", 23)) return (hasUpgrade("r+", 23)?1:0)
+        if (hasUpgrade("rr", 23)) return (hasUpgrade("r+", 23)?1:0)
         },    
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
@@ -252,7 +252,7 @@ addLayer("r+", {
             description: "restart+ boost restart+.",
             cost: new Decimal(500),
 		            effect() {
-                return player.points.plus(1).pow(0.25)
+                return player.rr.points.plus(1).pow(0.25)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
 	    },
@@ -306,7 +306,7 @@ addLayer("r+", {
 	if (hasUpgrade('pl', 25)) mult = mult.times(upgradeEffect('pl', 25))
 	if (hasUpgrade('pl', 35)) mult = mult.pow(upgradeEffect('pl', 35))
 	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
-	if (hasUpgrade('r+', 13)) mult = mult.times("e1e100")
+	if (hasUpgrade('rr', 13)) mult = mult.times("e1e100")
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -508,7 +508,7 @@ addLayer("r+", {
 	if (hasUpgrade('pl', 31)) mult = mult.times(upgradeEffect('pl', 31))
 	if (hasUpgrade('pl', 41)) mult = mult.pow(upgradeEffect('pl', 41))
 	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
-	if (hasUpgrade('r+', 14)) mult = mult.times("e1e100")
+	if (hasUpgrade('rr', 14)) mult = mult.times("e1e100")
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -710,7 +710,7 @@ addLayer("r+", {
 	if (hasUpgrade('pl', 32)) mult = mult.times(upgradeEffect('pl', 32))
 	if (hasUpgrade('pl', 42)) mult = mult.pow(upgradeEffect('pl', 42))
 	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
-	if (hasUpgrade('r+', 21)) mult = mult.times("e1e100")
+	if (hasUpgrade('rr', 21)) mult = mult.times("e1e100")
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
