@@ -271,7 +271,7 @@ addLayer("rr", {
             description: "restart+ raise points.",
             cost: new Decimal(1500),
             effect() {
-                return player.rr.points.add(10).log10().pow(10).mul(1000)
+                return player.rr.points.add(10).log10().pow(30).mul(1000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -280,7 +280,7 @@ addLayer("rr", {
             description: "restart+ raise restart.",
             cost: new Decimal(2500),
             effect() {
-                return player.rr.points.add(10).log10().pow(10).mul(1000)
+                return player.rr.points.add(10).log10().pow(30).mul(1000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -289,7 +289,7 @@ addLayer("rr", {
             description: "restart+ raise prestige.",
             cost: new Decimal(5000),
             effect() {
-                return player.rr.points.add(10).log10().pow(10).mul(1000)
+                return player.rr.points.add(10).log10().pow(30).mul(1000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -298,7 +298,7 @@ addLayer("rr", {
             description: "restart+ raise coins.",
             cost: new Decimal(7500),
             effect() {
-                return player.rr.points.add(10).log10().pow(10).mul(1000)
+                return player.rr.points.add(10).log10().pow(30).mul(1000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -307,7 +307,7 @@ addLayer("rr", {
             description: "restart+ raise diamonds.",
             cost: new Decimal(10000),
             effect() {
-                return player.rr.points.add(10).log10().pow(10).mul(1000)
+                return player.rr.points.add(10).log10().pow(30).mul(1000)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
