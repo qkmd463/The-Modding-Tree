@@ -572,7 +572,7 @@ addLayer("rr", {
     }},
     color: "#1b77a8",
     requires: new Decimal("e1e30"), // Can be a function that takes requirement increases into account
-    resource: "prestige", // Name of prestige currency
+    resource: "prestige+", // Name of prestige currency
     baseResource: "restart", // Name of resource prestige is based on
     baseAmount() {return player.r.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -596,6 +596,33 @@ addLayer("rr", {
     doReset(resettingLayer) {
 
 	},
+		upgrades:{
+        11: {
+            title: "11",
+            description: "points ^1e100.",
+            cost: new Decimal(1),
+        },
+        12: {
+            title: "12",
+            description: "restart ^1e100..",
+            cost: new Decimal(40),
+        },
+        13: {
+            title: "13",
+            description: "prestige ^1e100..",
+            cost: new Decimal(100),
+        },
+        14: {
+            title: "14",
+            description: "coins ^1e100..",
+            cost: new Decimal(1000),
+        },
+        21: {
+            title: "21",
+            description: "diamonds ^1e100..",
+            cost: new Decimal(210000),
+		},
+		}
 	}),
 	addLayer("c", {
     name: "coins", // This is optional, only used in a few places, If absent it just uses the layer id.
