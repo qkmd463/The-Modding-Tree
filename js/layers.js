@@ -862,7 +862,7 @@ addLayer("r", {
 		21: {
             title: "21",
             description: "planet raise coins.",
-            cost: new Decimal(13),
+            cost: new Decimal(12),
             effect() {
                 return player.pl.points.add(1).mul(8)
             },
@@ -871,9 +871,18 @@ addLayer("r", {
 		22: {
             title: "22",
             description: "planet raise diamonds.",
-            cost: new Decimal(14),
+            cost: new Decimal(13),
             effect() {
                 return player.pl.points.add(1).mul(4)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		23: {
+            title: "23",
+            description: "planet boost points.",
+            cost: new Decimal(14),
+            effect() {
+                return player.exp(pl).points.add(1).mul(4)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -907,12 +916,12 @@ addLayer("r", {
         5: {
             requirementDescription: "6 planet",
             effectDescription: "diamonds ^920.",
-            done() { return player.pl.points.gte(8) }
+            done() { return player.pl.points.gte(6) }
 		},
         6: {
             requirementDescription: "7 planet",
             effectDescription: "^10000 previous currencies.",
-            done() { return player.pl.points.gte(8) }
+            done() { return player.pl.points.gte(7) }
 		},
 		}
 			})
