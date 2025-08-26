@@ -560,48 +560,6 @@ addLayer("rr", {
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             },
 	}
-
-	addLayer("pp", {
-    name: "prestige+", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "p+", // This appears on the layer's node. Default is the id with the first letter capitalized
-    position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
-    startData() { return {
-        unlocked: true,
-		points: new Decimal(0),
-	    	restart: new Decimal(0),
-    }},
-    color: "#1b77a8",
-    requires: new Decimal("e1e30"), // Can be a function that takes requirement increases into account
-    resource: "prestige=", // Name of prestige currency
-    baseResource: "restart", // Name of resource prestige is based on
-    baseAmount() {return player.r.points}, // Get the current amount of baseResource
-    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.16e-30, // Prestige currency exponent
-    gainMult() { // Calculate the multiplier for main currency from bonuses
-		mult = new Decimal(1)
- 	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
- 	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
- 	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
- 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(1e-8).mul("e1e21")
- 	if(mult.gte("e1e24")) mult=mult.div("e1e24").pow(1e-16).mul("e1e24")
- 	if(mult.gte("e1e27")) mult=mult.div("e1e27").pow(1e-32).mul("e1e27")
- 	if(mult.gte("e1e30")) mult=mult.div("e1e30").pow(1e-64).mul("e1e30")
- 	if(mult.gte("e1e33")) mult=mult.div("e1e33").log10().mul("e1e33")
-        return mult
-    },
-    gainExp() { // Calculate the exponent on main currency from bonuses
-        return new Decimal(1)
-    },
-    row: 1, // Row the layer is in on the tree (0 is the first row)
-    passiveGeneration() { 
-        },    
-    hotkeys: [
-        {key: "P", description: "P: reset for prestige+", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
-    ],
-    layerShown(){return true},
-    doReset(resettingLayer) {
-
-	},
 	}),
 
 	addLayer("c", {
@@ -1265,9 +1223,6 @@ addLayer("rr", {
 		},
 		}
 			})
-			
-
-
 	
 
 
