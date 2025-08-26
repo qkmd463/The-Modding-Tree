@@ -41,7 +41,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 24)) mult = mult.times(upgradeEffect('pl', 24))
 	if (hasUpgrade('pl', 34)) mult = mult.pow(upgradeEffect('pl', 34))
 	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
-	if (hasUpgrade('r+', 12)) mult = mult.times("e1e50")
+	if (hasUpgrade('r+', 12)) mult = mult.times("e1e100")
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -223,27 +223,27 @@ addLayer("r+", {
 	upgrades: {
         11: {
             title: "11",
-            description: "e1e50x point gain.",
+            description: "e1e100x point gain.",
             cost: new Decimal(1),
         },
         12: {
             title: "12",
-            description: "e1e50x restart gain.",
+            description: "e1e100x restart gain.",
             cost: new Decimal(10),
         },
         13: {
             title: "13",
-            description: "e1e50x prestige gain.",
+            description: "e1e100x prestige gain.",
             cost: new Decimal(50),
         },
         14: {
             title: "14",
-            description: "e1e50x coins gain.",
+            description: "e1e100x coins gain.",
             cost: new Decimal(100),
         },
         21: {
             title: "21",
-            description: "e1e50x diamonds gain.",
+            description: "e1e100x diamonds gain.",
             cost: new Decimal(250),
         },
 		}
@@ -291,7 +291,7 @@ addLayer("r+", {
 	if (hasUpgrade('pl', 25)) mult = mult.times(upgradeEffect('pl', 25))
 	if (hasUpgrade('pl', 35)) mult = mult.pow(upgradeEffect('pl', 35))
 	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
-	if (hasUpgrade('r+', 13)) mult = mult.times("e1e50")
+	if (hasUpgrade('r+', 13)) mult = mult.times("e1e100")
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -493,7 +493,7 @@ addLayer("r+", {
 	if (hasUpgrade('pl', 31)) mult = mult.times(upgradeEffect('pl', 31))
 	if (hasUpgrade('pl', 41)) mult = mult.pow(upgradeEffect('pl', 41))
 	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
-	if (hasUpgrade('r+', 14)) mult = mult.times("e1e50")
+	if (hasUpgrade('r+', 14)) mult = mult.times("e1e100")
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -695,7 +695,7 @@ addLayer("r+", {
 	if (hasUpgrade('pl', 32)) mult = mult.times(upgradeEffect('pl', 32))
 	if (hasUpgrade('pl', 42)) mult = mult.pow(upgradeEffect('pl', 42))
 	if (hasUpgrade('pl', 43)) mult = mult.pow(upgradeEffect('pl', 43))
-	if (hasUpgrade('r+', 21)) mult = mult.times("e1e50")
+	if (hasUpgrade('r+', 21)) mult = mult.times("e1e100")
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
