@@ -39,6 +39,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 14)) mult = mult.pow(upgradeEffect('pl', 14))
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
 	if (hasUpgrade('pl', 24)) mult = mult.times(upgradeEffect('pl', 24))
+	if (hasUpgrade('pl', 34)) mult = mult.pow(upgradeEffect('pl', 34))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -220,6 +221,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 15)) mult = mult.pow(upgradeEffect('pl', 15))
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
 	if (hasUpgrade('pl', 25)) mult = mult.times(upgradeEffect('pl', 25))
+	if (hasUpgrade('pl', 35)) mult = mult.pow(upgradeEffect('pl', 35))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -416,6 +418,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 4)) mult = mult.pow(76.3)
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
 	if (hasUpgrade('pl', 31)) mult = mult.times(upgradeEffect('pl', 31))
+	if (hasUpgrade('pl', 41)) mult = mult.pow(upgradeEffect('pl', 41))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -609,9 +612,10 @@ addLayer("r", {
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (hasUpgrade('pl', 22)) mult = mult.pow(upgradeEffect('pl', 22))
-	if (hasUpgrade('pl', 32)) mult = mult.times(upgradeEffect('pl', 32))
 	if (hasMilestone('pl', 5)) mult = mult.pow(920)
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
+	if (hasUpgrade('pl', 32)) mult = mult.times(upgradeEffect('pl', 32))
+	if (hasUpgrade('pl', 42)) mult = mult.pow(upgradeEffect('pl', 34))
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
@@ -919,6 +923,51 @@ addLayer("r", {
             cost: new Decimal(14),
             effect() {
                 return player.pl.points.add(10).tetrate(2.1).pow(1e16)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		33: {
+            title: "33",
+            description: "points raise points.",
+            cost: new Decimal(16),
+            effect() {
+                return player.points.add(10).log10().pow(0.1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		34: {
+            title: "34",
+            description: "restart raise restart.",
+            cost: new Decimal(19),
+            effect() {
+                return player.r.points.add(10).log10().pow(0.1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		34: {
+            title: "34",
+            description: "prestige raise prestige.",
+            cost: new Decimal(23),
+            effect() {
+                return player.p.points.add(10).log10().pow(0.1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		35: {
+            title: "34",
+            description: "coins raise coins.",
+            cost: new Decimal(28),
+            effect() {
+                return player.c.points.add(10).log10().pow(0.1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		41: {
+            title: "41",
+            description: "diamonds raise diamonds.",
+            cost: new Decimal(34),
+            effect() {
+                return player.d.points.add(10).log10().pow(0.1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
