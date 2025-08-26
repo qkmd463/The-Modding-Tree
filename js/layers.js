@@ -204,7 +204,7 @@ addLayer("rr", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 	if (hasUpgrade('pl', 44)) mult = mult.times(2)
-	if (hasUpgrade('rr', 22)) mult = mult.times(upgradeEffect('r+', 22))
+	if (hasUpgrade('rr', 22)) mult = mult.times(upgradeEffect('rr', 22))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
