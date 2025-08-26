@@ -252,7 +252,7 @@ addLayer("r+", {
             description: "restart+ boost restart+.",
             cost: new Decimal(500),
 		            effect() {
-                return player.r+.points.plus(1).pow(0.25)
+                return player.points.plus(1).pow(0.25)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
 	    },
