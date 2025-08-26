@@ -943,7 +943,7 @@ addLayer("r", {
             description: "points raise points.",
             cost: new Decimal(15),
             effect() {
-                return player.points.add(10).log10().pow(0.1)
+                return player.points.add(10).log10().pow(0.4)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -952,7 +952,7 @@ addLayer("r", {
             description: "restart raise restart.",
             cost: new Decimal(16),
             effect() {
-                return player.r.points.add(10).log10().pow(0.1)
+                return player.r.points.add(10).log10().pow(0.5)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -961,7 +961,7 @@ addLayer("r", {
             description: "prestige raise prestige.",
             cost: new Decimal(17),
             effect() {
-                return player.p.points.add(10).log10().pow(0.1)
+                return player.p.points.add(10).log10().pow(0.6)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -970,7 +970,7 @@ addLayer("r", {
             description: "coins raise coins.",
             cost: new Decimal(18),
             effect() {
-                return player.c.points.add(10).log10().pow(0.1)
+                return player.c.points.add(10).log10().pow(0.7)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -979,7 +979,7 @@ addLayer("r", {
             description: "diamonds raise diamonds.",
             cost: new Decimal(19),
             effect() {
-                return player.d.points.add(10).log10().pow(0.1)
+                return player.d.points.add(10).log10().pow(0.8)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
