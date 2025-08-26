@@ -941,7 +941,7 @@ addLayer("r", {
 		33: {
             title: "33",
             description: "points raise points.",
-            cost: new Decimal(16),
+            cost: new Decimal(15),
             effect() {
                 return player.points.add(10).log10().pow(0.1)
             },
@@ -950,7 +950,7 @@ addLayer("r", {
 		34: {
             title: "34",
             description: "restart raise restart.",
-            cost: new Decimal(19),
+            cost: new Decimal(16),
             effect() {
                 return player.r.points.add(10).log10().pow(0.1)
             },
@@ -959,7 +959,7 @@ addLayer("r", {
 		34: {
             title: "34",
             description: "prestige raise prestige.",
-            cost: new Decimal(23),
+            cost: new Decimal(17),
             effect() {
                 return player.p.points.add(10).log10().pow(0.1)
             },
@@ -968,7 +968,7 @@ addLayer("r", {
 		35: {
             title: "34",
             description: "coins raise coins.",
-            cost: new Decimal(28),
+            cost: new Decimal(18),
             effect() {
                 return player.c.points.add(10).log10().pow(0.1)
             },
@@ -977,7 +977,7 @@ addLayer("r", {
 		41: {
             title: "41",
             description: "diamonds raise diamonds.",
-            cost: new Decimal(34),
+            cost: new Decimal(19),
             effect() {
                 return player.d.points.add(10).log10().pow(0.1)
             },
