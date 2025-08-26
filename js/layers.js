@@ -934,7 +934,7 @@ addLayer("r", {
             description: "planet boost diamonds.",
             cost: new Decimal(14),
             effect() {
-                return player.pl.points.add(10).tetrate(2.1).pow(1e16)
+                return player.pl.points.add(10).tetrate(2.1).pow(1e21)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
