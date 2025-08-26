@@ -212,7 +212,6 @@ addLayer("rr", {
 	if (hasUpgrade('rr', 42)) mult = mult.times(upgradeEffect('rr', 42))
 	if (hasUpgrade('rr', 43)) mult = mult.times(upgradeEffect('rr', 43))
 	if (hasUpgrade('rr', 44)) mult = mult.times(upgradeEffect('rr', 44))
-	if (hasMilestone('rr', 0)) mult = mult.times(milestoneEffect('rr', 0))
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
@@ -358,13 +357,6 @@ addLayer("rr", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
-		},
-	    milestones: {
-        0: {
-            requirementDescription: "1e17 restart+",
-            effectDescription: "diamonds boost restart+.",
-            done() { return player.rr.points.gte(1e17) }
-        },
 		},
 	}),
 	addLayer("p", {
