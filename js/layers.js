@@ -211,7 +211,7 @@ addLayer("rr", {
         return new Decimal(1)
     },
     passiveGeneration() { 
-        if (hasUpgrade("rr", 23)) return (hasUpgrade("r+", 23)?1:0)
+        if (hasUpgrade("rr", 23)) return (hasUpgrade("rr", 23)?1:0)
         },    
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
