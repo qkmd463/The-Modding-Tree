@@ -367,7 +367,6 @@ addLayer("rr", {
 	            effect() {
                 return player.d.points.add(10).log10().log10().add(1).mul(10)
             },
-            effectDisplay() { return format(milestoneEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         },
 		},
 	}),
