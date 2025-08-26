@@ -64,12 +64,15 @@ function getPointGen() {
 	if (hasUpgrade('pl', 12)) gain = gain.pow(upgradeEffect('pl', 12))
 	if (hasUpgrade('pl', 13)) gain = gain.pow(upgradeEffect('pl', 13))
 	if (hasMilestone('pl', 6)) gain = gain.pow(1e4)
-	if (hasUpgrade('pl', 23)) mult = mult.times(upgradeEffect('pl', 23))
-	if (inChallenge('d', 11)) gain = gain.pow(0.0001)
+	if (hasUpgrade('pl', 23)) gain = gain.times(upgradeEffect('pl', 23))
+	if (hasUpgrade('pl', 23)) gain = gain.pow(upgradeEffect('pl', 33))
  	if(gain.gte("e1e12")) gain=gain.div("e1e12").pow(0.1).mul("e1e12")
  	if(gain.gte("e1e15")) gain=gain.div("e1e15").pow(0.01).mul("e1e15")
  	if(gain.gte("e1e18")) gain=gain.div("e1e15").pow(0.0001).mul("e1e18")
  	if(gain.gte("e1e21")) gain=gain.div("e1e21").pow(0.00000001).mul("e1e21")
+ 	if(gain.gte("e1e24")) gain=gain.div("e1e24").pow(1e-16).mul("e1e24")
+ 	if(gain.gte("e1e27")) gain=gain.div("e1e27").pow(1e-32).mul("e1e27")
+ 	if(gain.gte("e1e30")) gain=gain.div("e1e30").pow(1e-64).mul("e1e30")
 	return gain
 }
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
