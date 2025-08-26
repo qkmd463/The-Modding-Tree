@@ -203,7 +203,7 @@ addLayer("r+", {
     exponent: 0.08e-30, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
-
+	if (hasUpgrade('pl', 44)) mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
@@ -1063,7 +1063,12 @@ addLayer("r+", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
+		44: {
+            title: "44",
+            description: "2x restart+ gain.",
+            cost: new Decimal(145),
 		},
+		}
     milestones: {
         0: {
             requirementDescription: "1 planet",
