@@ -38,6 +38,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (hasUpgrade('pl', 14)) mult = mult.pow(upgradeEffect('pl', 14))
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
+	if (hasUpgrade('pl', 24)) mult = mult.times(upgradeEffect('pl', 24))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -218,6 +219,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (hasUpgrade('pl', 15)) mult = mult.pow(upgradeEffect('pl', 15))
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
+	if (hasUpgrade('pl', 25)) mult = mult.times(upgradeEffect('pl', 25))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -413,6 +415,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 21)) mult = mult.pow(upgradeEffect('pl', 21))
 	if (hasMilestone('pl', 4)) mult = mult.pow(76.3)
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
+	if (hasUpgrade('pl', 31)) mult = mult.times(upgradeEffect('pl', 31))
 	if (inChallenge('d', 11)) mult = mult.pow(0.0001)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
@@ -606,6 +609,7 @@ addLayer("r", {
 	if (hasUpgrade('pl', 11)) mult = mult.times(upgradeEffect('pl', 11))
 	if (hasUpgrade('pl', 12)) mult = mult.pow(upgradeEffect('pl', 12))
 	if (hasUpgrade('pl', 22)) mult = mult.pow(upgradeEffect('pl', 22))
+	if (hasUpgrade('pl', 32)) mult = mult.times(upgradeEffect('pl', 32))
 	if (hasMilestone('pl', 5)) mult = mult.pow(920)
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
@@ -793,12 +797,7 @@ addLayer("r", {
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 14, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
-        mult = new Decimal(0.5)
-	if (hasUpgrade('pl', 23)) mult = mult.times(1e100)
- 	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
- 	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
- 	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
- 	if(mult.gte("e1e21")) mult=mult.div("e1e21").pow(1e-8).mul("e1e21")
+        mult = new Decimal(1)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -836,7 +835,7 @@ addLayer("r", {
 		13: {
             title: "13",
             description: "planet raise points.",
-            cost: new Decimal(8),
+            cost: new Decimal(5),
             effect() {
                 return player.pl.points.add(1).mul(1000)
             },
@@ -845,7 +844,7 @@ addLayer("r", {
 		14: {
             title: "14",
             description: "planet raise restart.",
-            cost: new Decimal(9),
+            cost: new Decimal(6),
             effect() {
                 return player.pl.points.add(1).mul(100)
             },
@@ -854,7 +853,7 @@ addLayer("r", {
 		15: {
             title: "15",
             description: "planet raise prestige.",
-            cost: new Decimal(11),
+            cost: new Decimal(7),
             effect() {
                 return player.pl.points.add(1).mul(21)
             },
@@ -863,7 +862,7 @@ addLayer("r", {
 		21: {
             title: "21",
             description: "planet raise coins.",
-            cost: new Decimal(12),
+            cost: new Decimal(8),
             effect() {
                 return player.pl.points.add(1).mul(8)
             },
@@ -872,7 +871,7 @@ addLayer("r", {
 		22: {
             title: "22",
             description: "planet raise diamonds.",
-            cost: new Decimal(13),
+            cost: new Decimal(9),
             effect() {
                 return player.pl.points.add(1).mul(4)
             },
@@ -880,10 +879,46 @@ addLayer("r", {
 		},
 		23: {
             title: "23",
-            description: "points boost planet.",
+            description: "planet boost points.",
+            cost: new Decimal(10),
+            effect() {
+                return player.pl.points.add(10).tetrate(2.5).pow(1e21)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		24: {
+            title: "24",
+            description: "planet boost restart.",
+            cost: new Decimal(11),
+            effect() {
+                return player.pl.points.add(10).tetrate(2.4).pow(1e21)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		25: {
+            title: "25",
+            description: "planet boost prestige.",
+            cost: new Decimal(12),
+            effect() {
+                return player.pl.points.add(10).tetrate(2.3).pow(1e21)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		31: {
+            title: "31",
+            description: "planet boost coins.",
+            cost: new Decimal(13),
+            effect() {
+                return player.pl.points.add(10).tetrate(2.2).pow(1e21)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		32: {
+            title: "32",
+            description: "planet boost diamonds.",
             cost: new Decimal(14),
             effect() {
-                return player.points.add(10).log10().log10().div(20)
+                return player.pl.points.add(10).tetrate(2.1).pow(1e21)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
