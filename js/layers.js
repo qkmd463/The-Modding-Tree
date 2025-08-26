@@ -204,11 +204,11 @@ addLayer("r+", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 	if (hasUpgrade('pl', 44)) mult = mult.times(2)
+	if (hasUpgrade('r+', 22)) mult = mult.times(upgradeEffect('r+', 22))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
         return new Decimal(1)
-	if (hasUpgrade('r+', 22)) mult = mult.times(upgradeEffect('r+', 22))
     },
     passiveGeneration() { 
         if (hasUpgrade("r+", 23)) return (hasUpgrade("r+", 23)?1:0)
@@ -249,14 +249,14 @@ addLayer("r+", {
         },
 		22: {
             title: "22",
-            description: "restart+ boost restart+",
+            description: "restart+ boost restart+.",
             cost: new Decimal(500),
-            effect() {
-                return player.r+.points.add(1).pow(0.25)
+		            effect() {
+                return player.points.plus(1).pow(0.25)
             },
-            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-		},
-        23: {
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect	    
+	    },
+		23: {
             title: "23",
             description: "+100% restart+/s.",
             cost: new Decimal(1000),
