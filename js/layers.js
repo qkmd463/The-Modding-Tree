@@ -1068,7 +1068,7 @@ addLayer("r+", {
             description: "2x restart+ gain.",
             cost: new Decimal(145),
 		},
-		}
+		},
     milestones: {
         0: {
             requirementDescription: "1 planet",
