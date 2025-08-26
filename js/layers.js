@@ -207,6 +207,9 @@ addLayer("rr", {
 	if (hasUpgrade('pl', 44)) mult = mult.times(2)
 	if (hasUpgrade('rr', 22)) mult = mult.times(upgradeEffect('rr', 22))
 	if (hasUpgrade('rr', 41)) mult = mult.times(upgradeEffect('rr', 41))
+	if (hasUpgrade('rr', 42)) mult = mult.times(upgradeEffect('rr', 42))
+	if (hasUpgrade('rr', 43)) mult = mult.times(upgradeEffect('rr', 43))
+	if (hasUpgrade('rr', 44)) mult = mult.times(upgradeEffect('rr', 44))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
@@ -314,6 +317,33 @@ addLayer("rr", {
             cost: new Decimal(17000),
             effect() {
                 return player.points.add(10).log10().log(10).add(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		42: {
+            title: "42",
+            description: "restart boost restart+.",
+            cost: new Decimal(100000),
+            effect() {
+                return player.r.points.add(10).log10().log(10).add(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		43: {
+            title: "43",
+            description: "prestige boost restart+.",
+            cost: new Decimal(3000000),
+            effect() {
+                return player.p.points.add(10).log10().log(10).add(1)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+		},
+		44: {
+            title: "44",
+            description: "coinst boost restart+.",
+            cost: new Decimal(50000000),
+            effect() {
+                return player.c.points.add(10).log10().log(10).add(1)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
