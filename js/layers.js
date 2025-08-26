@@ -187,15 +187,15 @@ addLayer("r", {
 
 addLayer("r+", {
     name: "restart+", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "r", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbol: "r+", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
-        unlocked: true,
+        unlocked: false,
 		points: new Decimal(0),
     }},
-    color: "#6b1b1b",
+    color: "#ad2b2b",
     requires: new Decimal("e1e30"), // Can be a function that takes requirement increases into account
-    resource: "restart", // Name of prestige currency
+    resource: "restart+", // Name of prestige currency
     baseResource: "points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
