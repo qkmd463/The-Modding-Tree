@@ -624,7 +624,7 @@ addLayer("r", {
 	if (hasMilestone('pl', 5)) mult = mult.pow(920)
 	if (hasMilestone('pl', 6)) mult = mult.pow(1e4)
 	if (hasUpgrade('pl', 32)) mult = mult.times(upgradeEffect('pl', 32))
-	if (hasUpgrade('pl', 42)) mult = mult.pow(upgradeEffect('pl', 34))
+	if (hasUpgrade('pl', 42)) mult = mult.pow(upgradeEffect('pl', 42))
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
@@ -956,8 +956,8 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
-		34: {
-            title: "34",
+		35: {
+            title: "35",
             description: "prestige raise prestige.",
             cost: new Decimal(17),
             effect() {
@@ -965,8 +965,8 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
-		35: {
-            title: "34",
+		41: {
+            title: "41",
             description: "coins raise coins.",
             cost: new Decimal(18),
             effect() {
@@ -974,8 +974,8 @@ addLayer("r", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
-		41: {
-            title: "41",
+		42: {
+            title: "42",
             description: "diamonds raise diamonds.",
             cost: new Decimal(19),
             effect() {
