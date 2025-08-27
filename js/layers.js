@@ -653,6 +653,8 @@ addLayer("rr", {
             title: "23",
             description: "+100% prestige+.",
             cost: new Decimal(1000000),
+		},
+		},
 	}),
 	addLayer("c", {
     name: "coins", // This is optional, only used in a few places, If absent it just uses the layer id.
