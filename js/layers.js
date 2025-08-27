@@ -585,6 +585,7 @@ addLayer("rr", {
 	if (hasUpgrade('pp', 12)) mult = mult.times(2)
 	if (hasUpgrade('pp', 14)) mult = mult.times(upgradeEffect('pp', 14))
 	if (hasUpgrade('pp', 22)) mult = mult.times(upgradeEffect('pp', 22))
+	if (hasUpgrade('pl', 45)) mult = mult.times(3)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -1276,6 +1277,11 @@ addLayer("rr", {
             title: "44",
             description: "2x restart+ gain.",
             cost: new Decimal(145),
+		},
+		45: {
+            title: "45",
+            description: "3x prestige+ gain.",
+            cost: new Decimal(236),
 		},
 		},
     milestones: {
