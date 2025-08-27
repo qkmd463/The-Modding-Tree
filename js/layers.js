@@ -601,27 +601,27 @@ addLayer("rr", {
 		upgrades:{
         11: {
             title: "11",
-            description: "points ^1e100.",
+            description: "points ^100.",
             cost: new Decimal(1),
         },
         12: {
             title: "12",
-            description: "restart ^1e100..",
+            description: "restart ^100..",
             cost: new Decimal(40),
         },
         13: {
             title: "13",
-            description: "prestige ^1e100..",
+            description: "prestige ^100.",
             cost: new Decimal(100),
         },
         14: {
             title: "14",
-            description: "coins ^1e100..",
+            description: "coins ^100..",
             cost: new Decimal(1000),
         },
         21: {
             title: "21",
-            description: "diamonds ^1e100..",
+            description: "diamonds ^100..",
             cost: new Decimal(210000),
 		},
 		}
