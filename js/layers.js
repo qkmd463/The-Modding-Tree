@@ -648,7 +648,6 @@ addLayer("rr", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
-		},
         23: {
             title: "23",
             description: "+100% prestige+.",
