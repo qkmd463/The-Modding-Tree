@@ -211,6 +211,9 @@ addLayer("rr", {
 	if (hasUpgrade('rr', 42)) mult = mult.times(upgradeEffect('rr', 42))
 	if (hasUpgrade('rr', 43)) mult = mult.times(upgradeEffect('rr', 43))
 	if (hasUpgrade('rr', 44)) mult = mult.times(upgradeEffect('rr', 44))
+	if (hasUpgrade('pp', 11)) mult = mult.times(3)
+	if (hasUpgrade('pp', 13)) mult = mult.times(upgradeEffect('pp', 13))
+	if (hasUpgrade('pp', 21)) mult = mult.times(upgradeEffect('pp', 21))
  	if(mult.gte("e1e12")) mult=mult.div("e1e12").pow(0.1).mul("e1e12")
  	if(mult.gte("e1e15")) mult=mult.div("e1e15").pow(0.01).mul("e1e15")
  	if(mult.gte("e1e18")) mult=mult.div("e1e18").pow(0.0001).mul("e1e18")
@@ -579,7 +582,9 @@ addLayer("rr", {
     exponent: 0.16e-30, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
-
+	if (hasUpgrade('pp', 12)) mult = mult.times(2)
+	if (hasUpgrade('pp', 14)) mult = mult.times(upgradeEffect('pp', 14))
+	if (hasUpgrade('pp', 22)) mult = mult.times(upgradeEffect('pp', 22))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -587,7 +592,7 @@ addLayer("rr", {
     },
     row: 1, // Row the layer is in on the tree (0 is the first row)
     passiveGeneration() { 
-
+        if (hasUpgrade("pp", 23)) return (hasUpgrade("pp", 23)?1:0)
         },    
     hotkeys: [
         {key: "P", description: "P: reset for prestige+", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
@@ -637,12 +642,17 @@ addLayer("rr", {
         22: {
             title: "22",
             description: "prestige+ boost prestige+.",
-            cost: new Decimal(210),
+            cost: new Decimal(6000),
             effect() {
                 return player[this.layer].points.add(1).pow(0.15)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-		}
+		},
+		},
+        23: {
+            title: "23",
+            description: "+100% prestige+.",
+            cost: new Decimal(1000000),
 	}),
 	addLayer("c", {
     name: "coins", // This is optional, only used in a few places, If absent it just uses the layer id.
