@@ -601,29 +601,49 @@ addLayer("rr", {
 		upgrades:{
         11: {
             title: "11",
-            description: "points ^100.",
+            description: "restart+ x3.",
             cost: new Decimal(1),
         },
         12: {
             title: "12",
-            description: "restart ^100..",
-            cost: new Decimal(40),
+            description: "prestige+ x2.",
+            cost: new Decimal(3),
         },
         13: {
             title: "13",
-            description: "prestige ^100.",
-            cost: new Decimal(100),
+            description: "prestige+ boost restart+.",
+            cost: new Decimal(15),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.3)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         },
         14: {
             title: "14",
-            description: "coins ^100..",
-            cost: new Decimal(1000),
+            description: "restart+ boost prestige+.",
+            cost: new Decimal(50),
+			effect() {
+                return player.rr.points.plus(10).pow(1.4).log10()
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the eff
         },
         21: {
             title: "21",
-            description: "diamonds ^100..",
-            cost: new Decimal(210000),
+            description: "diamonds boost restart+.",
+            cost: new Decimal(210),
+            effect() {
+                return player.c.points.add(10).log10().log(10).add(1).mul(25)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
+        22: {
+            title: "22",
+            description: "prestige+ boost prestige+.",
+            cost: new Decimal(210),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.15)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		}
 	}),
 	addLayer("c", {
