@@ -624,7 +624,7 @@ addLayer("rr", {
         14: {
             title: "14",
             description: "restart+ boost prestige+.",
-            cost: new Decimal(50),
+            cost: new Decimal(1e86),
 			effect() {
                 return player.rr.points.plus(10).pow(1.4).log10()
             },
@@ -633,7 +633,7 @@ addLayer("rr", {
         21: {
             title: "21",
             description: "diamonds boost restart+.",
-            cost: new Decimal(210),
+            cost: new Decimal(1e87),
             effect() {
                 return player.c.points.add(10).log10().log(10).add(1).mul(25)
             },
@@ -642,7 +642,7 @@ addLayer("rr", {
         22: {
             title: "22",
             description: "prestige+ boost prestige+.",
-            cost: new Decimal(6000),
+            cost: new Decimal(1e90),
             effect() {
                 return player[this.layer].points.add(1).pow(0.15)
             },
@@ -651,7 +651,7 @@ addLayer("rr", {
         23: {
             title: "23",
             description: "+100% prestige+.",
-            cost: new Decimal(1000000),
+            cost: new Decimal(1e107),
 		},
 		},
 	}),
