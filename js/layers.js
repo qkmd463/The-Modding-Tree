@@ -326,7 +326,7 @@ addLayer("rr", {
             description: "points boost restart+.",
             cost: new Decimal(17000),
             effect() {
-                return player.points.add(10).log10().log(10).add(1).mul(10)
+                return player.points.add(10).log10().log(10).add(1).mul(20)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
@@ -335,25 +335,25 @@ addLayer("rr", {
             description: "restart boost restart+.",
             cost: new Decimal(100000),
             effect() {
-                return player.r.points.add(10).log10().log(10).add(1).mul(10)
+                return player.r.points.add(10).log10().log(10).add(1).mul(20)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 		43: {
             title: "43",
             description: "prestige boost restart+.",
-            cost: new Decimal(1e10),
+            cost: new Decimal(1e11),
             effect() {
-                return player.p.points.add(10).log10().log(10).add(1).mul(10)
+                return player.p.points.add(10).log10().log(10).add(1).mul(20)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 		44: {
             title: "44",
-            description: "coinst boost restart+.",
-            cost: new Decimal(1e14),
+            description: "coins boost restart+.",
+            cost: new Decimal(1e15),
             effect() {
-                return player.c.points.add(10).log10().log(10).add(1).mul(10)
+                return player.c.points.add(10).log10().log(10).add(1).mul(20)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
