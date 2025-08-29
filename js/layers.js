@@ -659,7 +659,7 @@ addLayer("rr", {
             description: "prestige+ raise points",
             cost: new Decimal(1e108),
             effect() {
-                return player.pp.points.add(10).pow(10).tetrate(1.9)
+                return player.pp.points.add(10).pow(10).tetrate(1.5)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
