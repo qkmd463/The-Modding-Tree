@@ -51,7 +51,7 @@ addLayer("r", {
  	if(mult.gte("e1e24")) mult=mult.div("e1e24").pow(1e-16).mul("e1e24")
  	if(mult.gte("e1e27")) mult=mult.div("e1e27").pow(1e-32).mul("e1e27")
  	if(mult.gte("e1e30")) mult=mult.div("e1e30").pow(1e-64).mul("e1e30")
- 	if(mult.gte("e1e33")) mult=mult.div("e1e33").log10().mul("e1e33").pow(1e33)
+ 	if(mult.gte("e1e33")) mult=mult.div("e1e33").log10().mul("e1e33")
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuse
