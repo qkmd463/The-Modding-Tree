@@ -634,7 +634,7 @@ addLayer("rr", {
         21: {
             title: "21",
             description: "diamonds boost restart+.",
-            cost: new Decimal(1e87),
+            cost: new Decimal(1e88),
             effect() {
                 return player.c.points.add(10).log10().log(10).add(1).mul(25)
             },
