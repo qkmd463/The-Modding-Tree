@@ -625,7 +625,7 @@ addLayer("rr", {
         14: {
             title: "14",
             description: "restart+ boost prestige+.",
-            cost: new Decimal(1e86),
+            cost: new Decimal(1e87),
 			effect() {
                 return player.rr.points.plus(10).pow(1.4).log10()
             },
@@ -654,6 +654,14 @@ addLayer("rr", {
             description: "+100% prestige+.",
             cost: new Decimal(1e107),
 		},
+		24: {
+            title: "24",
+            description: "prestige+ raise points",
+            cost: new Decimal(1e108),
+            effect() {
+                return player.pp.points.add(10).pow(pow(2))
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 	}),
 	addLayer("c", {
