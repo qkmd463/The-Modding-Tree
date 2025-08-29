@@ -663,6 +663,7 @@ addLayer("rr", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
+		}
 	}),
 	addLayer("c", {
     name: "coins", // This is optional, only used in a few places, If absent it just uses the layer id.
